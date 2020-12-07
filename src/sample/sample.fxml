@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="774.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -38,7 +38,6 @@
             <FlowPane hgap="5.0" prefHeight="200.0" prefWidth="200.0" vgap="5.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <children>
                   <Label prefHeight="17.0" prefWidth="355.0" text="Datos" textAlignment="CENTER" />
-                  <ListView prefHeight="160.0" prefWidth="366.0" />
                   <Pane prefHeight="44.0" prefWidth="368.0">
                      <children>
                         <Button layoutX="294.0" layoutY="10.0" mnemonicParsing="false" text="Crear dieta" />
@@ -62,6 +61,7 @@
                         <Label layoutX="36.0" layoutY="111.0" text="Género" />
                      </children>
                   </Pane>
+                  <ListView fx:id="lista_alimentos" prefHeight="157.0" prefWidth="360.0" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
@@ -69,11 +69,11 @@
             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
                   <TextField layoutX="21.0" layoutY="14.0" prefHeight="25.0" prefWidth="343.0" text="Buscar" />
-                  <ListView layoutX="21.0" layoutY="51.0" prefHeight="333.0" prefWidth="343.0" />
+                  <ListView layoutX="21.0" layoutY="93.0" prefHeight="291.0" prefWidth="343.0" />
+                  <Button fx:id="add_alimento" layoutX="21.0" layoutY="56.0" mnemonicParsing="false" onAction="#addAlimento" text="Add" />
                </children>
             </Pane>
          </children>
       </GridPane>
-      <Hyperlink text="Hyperlink" />
    </children>
 </AnchorPane>
