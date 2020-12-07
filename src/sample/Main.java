@@ -12,9 +12,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Diet Maker");
+<<<<<<< Updated upstream
         primaryStage.setResizable(true);
         primaryStage.setScene(new Scene(root, 1200, 600));
         primaryStage.show();
+=======
+        primaryStage.setResizable(false);
+        primaryStage.setScene(new Scene(root, 774, 525));
+        primaryStage.show();//mostrar
+>>>>>>> Stashed changes
     }
 
 
