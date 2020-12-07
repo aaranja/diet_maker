@@ -22,31 +22,38 @@ public class Controller implements Initializable {
         alimentoObservableList.addAll(new Alimento("Papas", "500gr"));
     }
 
+    /* Método para añadir un nuevo alimento a la lista de alimentos seleccionados*/
     public void addAlimento(ActionEvent e) {
         alimentoObservableList.add(new Alimento("Salchicha", "400gr"));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        /* Añadir alimentos a la lista*/
         lista_alimentos.setItems(alimentoObservableList);
+        /* Darle propiedades a cada fila de la lista*/
         lista_alimentos.setCellFactory(alimentoListView -> {
             ListCell<Alimento> cell = new AlimentoListViewCell();
 
+            /* Crear menu de alimento */
             ContextMenu contextMenu = new ContextMenu();
 
+            /* Opción de menu editar gramos de alimento */
             MenuItem editGramos = new MenuItem();
             editGramos.textProperty().bind(Bindings.format("Editar gramos"));
             editGramos.setOnAction(event -> {
                 System.out.println("Editar gramos");
             });
 
+            /* Opción de menu eliminar alimento de la lista*/
             MenuItem eliminarAlimento = new MenuItem();
             eliminarAlimento.textProperty().bind(Bindings.format("Eliminar \"%s\"", cell.itemProperty()));
             eliminarAlimento.setOnAction(event -> lista_alimentos.getItems().remove(cell.getItem()));
 
+            /* Añadir el menú a cada fila*/
             contextMenu.getItems().addAll(editGramos, eliminarAlimento);
 
+            /* Quitar propiedad a una fila que se ha eliminado */
             cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
                 if (isNowEmpty){
                     cell.setContextMenu(null);
