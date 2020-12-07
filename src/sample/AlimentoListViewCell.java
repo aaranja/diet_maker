@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.GridPane;
-
 import java.io.IOException;
 
 public class AlimentoListViewCell extends ListCell<Alimento> {
@@ -32,6 +31,7 @@ public class AlimentoListViewCell extends ListCell<Alimento> {
                 }
             }
 
+            /* Asignar valores del alimento al los labels*/
             labelIndex.setText("--");
             labelNombre.setText(alimento.getNombre());
             labelGramos.setText(alimento.getGramos());

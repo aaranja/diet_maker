@@ -4,8 +4,9 @@ public class Alimento {
     private Integer index = 0;
     private String nombre;
     private String gramos;
+    private Integer calorias;
 
-    public Alimento(String nombre, String gramos) {
+    public Alimento(String nombre, String gramos ) {
         this.index++;
         this.nombre = nombre;
         this.gramos = gramos;

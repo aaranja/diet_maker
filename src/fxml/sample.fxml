@@ -72,7 +72,7 @@
                         <TextField fx:id="alturaInput" prefHeight="25.0" prefWidth="95.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
                         <TextField fx:id="pesoInput" GridPane.columnIndex="6" GridPane.rowIndex="6" />
                         <Label text="Altura:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                        <Label text="Peso:" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                        <Label prefHeight="17.0" prefWidth="57.0" text="Peso:" GridPane.columnIndex="4" GridPane.rowIndex="6" />
                         <ChoiceBox fx:id="generoSelected" prefWidth="150.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="8" />
                         <Button fx:id="add_alimento" mnemonicParsing="false" onAction="#addAlimento" prefHeight="25.0" prefWidth="76.0" text="Add" GridPane.columnIndex="6" GridPane.rowIndex="8" />
                      </children>
