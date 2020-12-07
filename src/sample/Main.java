@@ -10,19 +10,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));
         primaryStage.setTitle("Diet Maker");
-<<<<<<< Updated upstream
-        primaryStage.setResizable(true);
-        primaryStage.setScene(new Scene(root, 1200, 600));
-        primaryStage.show();
-=======
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root, 774, 525));
-        primaryStage.show();//mostrar
->>>>>>> Stashed changes
+        primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
