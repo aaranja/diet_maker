@@ -1,0 +1,89 @@
+{
+  "Frutas": {
+    "Caña": 65,
+    "Cereza": 41,
+    "Ciruela": 46,
+    "Dátiles": 107,
+    "Durazno": 74,
+    "Fresa": 23,
+    "Granada roja":  57,
+    "Guayaba": 46,
+    "Higo": 54,
+    "Mandarina": 44
+  },
+  "Verduras": {
+    "Acelga":20,
+    "Aguacate":42,
+    "Calabacita":16,
+    "Chicharo":144,
+    "Cilantro":24,
+    "Elote":15,
+    "Espinaca":23.50,
+    "Flor de calabaza":16,
+    "Lechuga":16,
+    "Nopal":24
+  },
+  "Tuberculos": {
+    "Ajo": 129,
+    "Betabel": 42,
+    "Camote": 103,
+    "Cebolla blanca": 38,
+    "Cebolla morada": 32,
+    "Jengibre": 28,
+    "Jicama": 32,
+    "Nabo": 22,
+    "Papa": 70,
+    "Rábano": 11
+  },
+
+  "Leguminosas y Derivados":{
+    "Cacahuate":519,
+    "Frijol amarillo":336,
+    "Frijol bayo desidratado":397.39,
+    "Frijol cocido":75.50,
+    "Frijol enlatado":87.40,
+    "Frijol Mexicano":341,
+    "Frijol molido":320,
+    "Frijol negro":328,
+    "Garbanzo cocido":118,
+    "Haba seca":341
+  },
+
+  "Varios": {
+    "Taco de suadero": 269,
+    "Cerveza": 303,
+    "Malteada": 392,
+    "Mole de olla": 51,
+    "Menudo": 66.54,
+    "Chiles en nogada": 238,
+    "Barbacoa de borrego": 243,
+    "Barra granola": 424,
+    "Flauta pollo": 272,
+    "Paella normal": 191.20
+  },
+  "Origen animal": {
+    "Lomo":     109,
+    "Bisteck":    263,
+    "Filete pavo":    135.80,
+    "Carne molida":    160.50,
+    "Chicharron":    530,
+    "Jamon horneado":    95,
+    "Peperoni":  494,
+    "Salami italiano":    407,
+    "Salchicha para asar"    :  447,
+    "Salchicha enlatada" :    99
+  },
+  "Pescados":{
+    "Atún en aceite":174.0,
+    "Atún en agua":	84,
+    "Bagre crudo":	119,
+    "Cabrilla cruda":87,
+    "Camarón al natural":71,
+    "Camarón cocido sin cáscara":110.0,
+    "Cangrejo crudo":72,
+    "Carpa asada":116,
+    "Cazón crudo":106,
+    "Charal crudo":88
+  }
+
+}
