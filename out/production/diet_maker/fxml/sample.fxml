@@ -74,7 +74,6 @@
                         <Label text="Altura:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                         <Label prefHeight="17.0" prefWidth="57.0" text="Peso:" GridPane.columnIndex="4" GridPane.rowIndex="6" />
                         <ChoiceBox fx:id="generoSelected" prefWidth="150.0" GridPane.columnIndex="2" GridPane.columnSpan="3" GridPane.rowIndex="8" />
-                        <Button fx:id="add_alimento" mnemonicParsing="false" onAction="#addAlimento" prefHeight="25.0" prefWidth="76.0" text="Add" GridPane.columnIndex="6" GridPane.rowIndex="8" />
                      </children>
                   </GridPane>
                   <VBox prefHeight="269.0" prefWidth="366.0">
@@ -104,7 +103,10 @@
                </padding></FlowPane>
             <Pane prefHeight="501.0" prefWidth="385.0" GridPane.columnIndex="1">
                <children>
-                  <TextField fx:id="buscadorInput" layoutX="21.0" layoutY="36.0" prefHeight="25.0" prefWidth="343.0" text="Buscar" />
+
+                  <TextField fx:id="buscadorInput" layoutX="21.0" layoutY="36.0" prefHeight="25.0" promptText="Buscar" prefWidth="343.0" />
+                  <ListView layoutX="21.0" layoutY="66.0" prefHeight="374.0" prefWidth="343.0" />
+
                   <Pane layoutX="19.0" layoutY="448.0" maxHeight="128.0" prefHeight="39.0" prefWidth="349.0">
                      <children>
                         <Button layoutX="269.0" layoutY="7.0" mnemonicParsing="false" text="Crear dieta" />
