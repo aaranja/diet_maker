@@ -1,30 +1,37 @@
 package sample;
 
 public class Alimento {
-    private Integer index = 0;
     private String nombre;
-    private String gramos;
-    private Integer calorias;
+    private float calorias;
+    private String tipo;
 
-    public Alimento(String nombre, String gramos ) {
-        this.index++;
+    public Alimento(String nombre, float calorias, String tipo) {
         this.nombre = nombre;
-        this.gramos = gramos;
+        this.calorias = calorias;
+        this.tipo = tipo;
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
 
-    public String getGramos(){
-        return gramos;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getIndex(){ return index; }
-
-    public void setGramos(String nuevoGramos){
-        this.gramos = nuevoGramos;
+    public float getCalorias() {
+        return calorias;
     }
 
-    public String toString(){ return nombre; }
+    public void setCalorias(float calorias) {
+        this.calorias = calorias;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }

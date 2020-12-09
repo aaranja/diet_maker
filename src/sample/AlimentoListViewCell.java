@@ -34,7 +34,7 @@ public class AlimentoListViewCell extends ListCell<Alimento> {
             /* Asignar valores del alimento al los labels*/
             labelIndex.setText("--");
             labelNombre.setText(alimento.getNombre());
-            labelGramos.setText(alimento.getGramos());
+            labelGramos.setText(String.valueOf(alimento.getCalorias()));
 
             setText(null);
             setGraphic(gridPane);
