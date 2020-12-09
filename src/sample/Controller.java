@@ -14,7 +14,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import sample.buscador.Buscador;
-
+import sample.buscador.Alimento;
+import sample.lista.AlimentoItem;
+import sample.lista.AlimentoListViewCell;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -24,6 +26,10 @@ import java.io.FileReader;
 import java.net.URL;
 import java.util.*;
 import java.util.regex.Pattern;
+import java.text.MessageFormat;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
 
 public class Controller implements Initializable {
     //Tabla buscador
@@ -42,22 +48,34 @@ public class Controller implements Initializable {
     JsonReader rdr;
     private JsonObject obj;
 
-
-
-
-
     @FXML private ListView<Alimento> lista_alimentos;
     @FXML private Button add_alimento;
     private ObservableList<Alimento> alimentoObservableList;
 
     public Controller(){
-        alimentoObservableList = FXCollections.observableArrayList();
-        alimentoObservableList.addAll(new Alimento("Papas", 500,"tipo"));
+        
     }
 
     /* Método para añadir un nuevo alimento a la lista de alimentos seleccionados*/
     public void addAlimento(ActionEvent e) {
-        alimentoObservableList.add(new Alimento("Salchicha", 400,"tipo"));
+        alimentoObservableList.add(new AlimentoItem(alimento, "500gr"));
+        TextInputDialog dialog = new TextInputDialog("0");
+        dialog.setHeaderText("Introduce los gramos de "+alimento.getNombre());
+        dialog.setTitle("Alimento: "+alimento.getNombre());
+        dialog.setContentText("Gramos: ");
+
+        Optional<String> result = dialog.showAndWait();
+
+        String s = result.map(r -> {
+            try {
+                Integer n = Integer.valueOf(r);
+                return MessageFormat.format("Nice! I like {0} too!", n);
+            } catch (NumberFormatException ex) {
+                return MessageFormat.format("Unfortunately \"{0}\" is not a int!", r);
+            }
+        }).orElse("You really don't want to tell me, huh?");
+
+        System.out.println(s);
     }
 
     @Override
@@ -75,6 +93,7 @@ public class Controller implements Initializable {
         lista_alimentos.setCellFactory(alimentoListView -> {
             ListCell<Alimento> cell = new AlimentoListViewCell();
 
+
             /* Crear menu de alimento */
             ContextMenu contextMenu = new ContextMenu();
 
@@ -84,7 +103,6 @@ public class Controller implements Initializable {
             editGramos.setOnAction(event -> {
                 System.out.println("Editar gramos");
             });
-
 
             /* Opción de menu eliminar alimento de la lista*/
             MenuItem eliminarAlimento = new MenuItem();
@@ -107,9 +125,6 @@ public class Controller implements Initializable {
         });
         /*Añadir alimentos al buscador*/
         llenarTablaBuscador();
-
-
-
     }
 
     public void llenarTablaBuscador() {
@@ -223,7 +238,6 @@ public class Controller implements Initializable {
                 }
             }
         }
-
     }
 }
 
