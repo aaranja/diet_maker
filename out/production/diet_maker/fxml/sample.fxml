@@ -103,9 +103,7 @@
                </padding></FlowPane>
             <Pane prefHeight="501.0" prefWidth="385.0" GridPane.columnIndex="1">
                <children>
-
-                  <TextField fx:id="buscadorInput" layoutX="21.0" layoutY="36.0" prefHeight="25.0" prefWidth="343.0" text="Buscar" />
-                  <TextField fx:id="buscadorInput" layoutX="21.0" layoutY="36.0" prefHeight="25.0" prefWidth="343.0" text="Buscar" />
+                  <TextField fx:id="buscadorInput" layoutX="21.0" layoutY="36.0" prefHeight="25.0" promptText="Buscar" prefWidth="343.0" />
                   <ListView layoutX="21.0" layoutY="66.0" prefHeight="374.0" prefWidth="343.0" />
 
                   <Pane layoutX="19.0" layoutY="448.0" maxHeight="128.0" prefHeight="39.0" prefWidth="349.0">
