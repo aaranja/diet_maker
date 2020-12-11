@@ -1,7 +1,10 @@
 package sample;
 import javafx.beans.binding.Bindings;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -11,24 +14,36 @@ import sample.buscador.Buscador;
 import sample.buscador.Alimento;
 import sample.lista.AlimentoItem;
 import sample.lista.AlimentoListViewCell;
+import sample.user.DataUser;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.URL;
-import java.text.MessageFormat;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    //Tabla buscador
+    /* Tabla de selección de alimentos*/
     @FXML private TableView <Buscador>tabla_buscador;
-    //Columnas buscador
+
+    /* Datos de entrada del usuario */
+    @FXML private TextField nombreInput;
+    @FXML private TextField tallaInput;
+    @FXML private Label alert_talla;
+    @FXML private TextField alturaInput;
+    @FXML private TextField edadInput;
+    @FXML private TextField pesoInput;
+    @FXML private ChoiceBox<String> generoSelected;
+    private ObservableList<String> lista_genero = FXCollections.observableArrayList();
+
+    /* Columnas de selección de alimento */
     @FXML private TableColumn<Buscador,String>c_nombre;
     @FXML private TableColumn<Buscador,String>c_tipo;
     @FXML private TableColumn<Buscador,Number>c_calorias;
     @FXML private TableColumn<Buscador, String> c_accion;
+
     //Lista buscador
     private ObservableList<Buscador>lista_buscador;
     //Textfield buscador
@@ -69,8 +84,104 @@ public class Controller implements Initializable {
         else return false;
     }
 
+    public boolean crearDieta(ActionEvent e){
+        /* Verificar si se han seleccionado alimentos */
+        if(!alimentoObservableList.isEmpty()){
+            /* Conseguir todos los alimentos seleccionados */
+            for(AlimentoItem alimento_selected : alimentoObservableList){
+                System.out.println(alimento_selected.getAlimento().getNombre());
+
+            }
+
+            /* Crear datos del usuario */
+            DataUser usuario = new DataUser();
+            usuario.setNombre(estaVacio(nombreInput) ? nombreInput.getText() : null);
+            usuario.setEdad(estaVacio(edadInput) ? Integer.parseInt(edadInput.getText()) : 0 );
+            usuario.setAltura(estaVacio(alturaInput) ? Float.parseFloat(alturaInput.getText()) : 0);
+            usuario.setPeso(estaVacio(pesoInput) ? Float.parseFloat(edadInput.getText()) : 0 );
+            usuario.setGenero(generoSelected.getValue()!=null ? generoSelected.getValue() : null);
+
+            if(usuario.isComplete()){
+                /* Proceder a la calculación !! */
+
+                /*CalcularDieta a = new CalcularDienta(usuario, alimentoObservableList, true);
+
+                class CalcularDieta{
+                    CalcularDieta(DataUser a,ObservableList<AlimentoItem> lista_alimento, boolean pdf_required){
+                        datos = calcula(a, lista_alimento);
+                        if(pdf_required){
+                            crearPdf(datos);
+                        }
+                    }
+                }
+
+                resultado = 21321.3123;*/
+
+
+                /* Datos de salida */
+
+
+                alert_talla.setText("");
+            } else showAlert("Error", "", "Por favor, introduzca todos los datos requeridos!");
+        }else showAlert("Error", "", "Por favor, seleccione al menos un alimento!");
+
+        return true;
+    }
+
+    private void showAlert(String tittle, String header, String text){
+        Alert a = new Alert(Alert.AlertType.WARNING);
+        a.setTitle(tittle);
+        a.setHeaderText(header);
+        a.setContentText(text);
+        a.show();
+    }
+
+    private boolean estaVacio(TextField x){
+        if(x.getText().equals("")) return false;
+        return true;
+    }
+
+    private void onlyFloat(TextField x){
+        x.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("(\\d{0,7})([\\.]\\d{0,4})?")) {
+                    if(oldValue.equals(".")){
+                        x.setText("");
+                        alert_talla.setText("Mensaje: Numero primero");
+                    }else{
+                        x.setText(oldValue);
+                        alert_talla.setText("Mensaje: Solo números");
+                    }
+                } else{
+                    alert_talla.setText("");
+                }
+            }
+        });
+    }
+
+    private void onlyInt(TextField x){
+        x.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("(\\d{0,7})")) {
+                        x.setText(oldValue);
+                        alert_talla.setText("Mensaje: Solo números");
+                } else{
+                    alert_talla.setText("");
+                }
+            }
+        });
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /* Cargar lista de género */
+        cargarGenero();
+        onlyFloat(alturaInput);
+        onlyFloat(pesoInput);
+        onlyInt(edadInput);
+
         /* Añadir alimentos a la lista*/
         lista_alimentos.setItems(alimentoObservableList);
 
@@ -109,11 +220,18 @@ public class Controller implements Initializable {
                     cell.setContextMenu(contextMenu);
                 }
             });
-
             return cell;
         });
         /*Añadir alimentos al buscador*/
         llenarTablaBuscador();
+    }
+
+    private void cargarGenero(){
+        lista_genero.removeAll();
+        String a="Hombre";
+        String b="Mujer";
+        lista_genero.addAll(a,b);
+        generoSelected.getItems().addAll(lista_genero);
     }
 
     public void llenarTablaBuscador() {
