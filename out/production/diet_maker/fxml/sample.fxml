@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="774.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -25,7 +28,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <GridPane layoutY="47.0" prefHeight="402.0" prefWidth="774.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+      <GridPane layoutY="47.0" prefHeight="402.0" prefWidth="774.0" style="-fx-background-color: #fafafa;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -37,91 +40,213 @@
          <children>
             <FlowPane hgap="5.0" prefHeight="384.0" prefWidth="388.0" vgap="5.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <children>
-                  <GridPane prefWidth="359.0">
+                  <GridPane prefHeight="209.0" prefWidth="619.0" style="-fx-background-color: #fafafa; -fx-background-radius: 2;">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="53.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="1.0" prefWidth="5.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="94.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="0.0" prefWidth="15.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="82.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="20.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="48.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="159.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="12.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="78.0" />
                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="16.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="83.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="42.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="179.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="55.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="5.0" prefHeight="7.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="14.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="61.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="13.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="151.0" minHeight="0.0" prefHeight="28.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="327.0" minHeight="0.0" prefHeight="14.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="265.0" minHeight="6.0" prefHeight="28.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="204.0" minHeight="0.0" prefHeight="11.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="151.0" minHeight="4.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="61.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="83.0" minHeight="0.0" prefHeight="8.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="151.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="327.0" minHeight="0.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="265.0" minHeight="0.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="204.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="151.0" minHeight="4.0" prefHeight="9.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="17.0" prefWidth="355.0" text="Datos" textAlignment="CENTER" />
-                        <Label text="Nombre:" GridPane.rowIndex="2" />
-                        <Label text="Edad:" GridPane.rowIndex="6" />
-                        <Label text="Género:" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                        <TextField fx:id="nombreInput" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowIndex="2" GridPane.rowSpan="1" />
-                        <TextField fx:id="edadInput" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                        <TextField fx:id="alturaInput" prefHeight="25.0" prefWidth="95.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                        <TextField fx:id="pesoInput" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-                        <Label text="Altura:" GridPane.rowIndex="4" />
-                        <Label prefHeight="17.0" prefWidth="57.0" text="Peso:" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                        <ChoiceBox fx:id="generoSelected" prefHeight="25.0" prefWidth="93.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
-                        <Label fx:id="alert_talla" prefHeight="17.0" prefWidth="172.0" textFill="#ff7300" GridPane.columnSpan="3" GridPane.rowIndex="8" GridPane.rowSpan="1" />
+                        <Label prefHeight="17.0" prefWidth="355.0" text="Datos" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font></Label>
+                        <Label text="Nombre:" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <Label text="Edad:" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <Label prefHeight="45.0" prefWidth="76.0" text="Género:" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <TextField fx:id="nombreInput" GridPane.columnIndex="3" GridPane.columnSpan="5" GridPane.rowIndex="3" GridPane.rowSpan="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <TextField fx:id="edadInput" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <TextField fx:id="alturaInput" prefHeight="25.0" prefWidth="95.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <TextField fx:id="pesoInput" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font></TextField>
+                        <Label text="Altura:" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <Label prefHeight="17.0" prefWidth="57.0" text="Peso:" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                        <ChoiceBox fx:id="generoSelected" prefHeight="37.0" prefWidth="179.0" style="-fx-background-color: white;" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <Glow />
+                           </effect></ChoiceBox>
+                        <Label fx:id="alert_talla" prefHeight="17.0" prefWidth="172.0" textFill="#ff7300" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="9" GridPane.rowSpan="1" />
                      </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <opaqueInsets>
+                        <Insets left="2.0" />
+                     </opaqueInsets>
                   </GridPane>
-                  <VBox prefHeight="302.0" prefWidth="366.0">
+                  <VBox prefHeight="470.0" prefWidth="619.0" style="-fx-background-color: #fafafa; -fx-background-radius: 2;">
                      <children>
-                        <Label prefHeight="39.0" prefWidth="131.0" text="Alimentos seleccionados">
+                        <Label prefHeight="37.0" prefWidth="396.0" text="Alimentos seleccionados">
                            <padding>
-                              <Insets bottom="5.0" />
-                           </padding></Label>
-                        <HBox prefHeight="0.0" prefWidth="366.0">
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="142.0" text="Alimento">
-                                 <padding>
+                              <Insets bottom="5.0" left="5.0" />
+                           </padding>
+                           <font>
+                              <Font size="22.0" />
+                           </font></Label>
+                         <HBox prefHeight="34.0" prefWidth="619.0">
+                             <Label prefHeight="31.0" prefWidth="142.0" text="Alimento">
+                                <padding>
                                     <Insets bottom="5.0" left="39.0" />
-                                 </padding></Label>
-                              <Label prefHeight="17.0" prefWidth="117.0" text="Gramos">
-                                 <padding>
+                                </padding>
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                             </Label>
+                             <Label prefHeight="29.0" prefWidth="117.0" text="Gramos">
+                                <padding>
                                     <Insets left="46.0" />
-                                 </padding></Label>
-                           </children>
-                        </HBox>
-                        <ListView fx:id="lista_alimentos" prefHeight="247.0" prefWidth="366.0" />
+                                </padding>
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                             </Label>
+                         </HBox>
+                        <ListView fx:id="lista_alimentos" prefHeight="393.0" prefWidth="572.0">
+                           <VBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </VBox.margin></ListView>
                      </children>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </VBox>
                </children>
                <padding>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </padding></FlowPane>
-            <Pane prefHeight="501.0" prefWidth="385.0" GridPane.columnIndex="1">
+            <GridPane prefHeight="653.0" prefWidth="640.0" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="315.0" minWidth="10.0" prefWidth="16.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="625.0" minWidth="10.0" prefWidth="609.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="625.0" minWidth="10.0" prefWidth="16.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="38.0" minHeight="0.0" prefHeight="4.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="692.0" minHeight="10.0" prefHeight="678.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="227.0" minHeight="0.0" prefHeight="7.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <TextField fx:id="buscadorInput" layoutX="21.0" layoutY="36.0" prefHeight="25.0" prefWidth="343.0" promptText="Buscar" />
-                  <ListView layoutX="21.0" layoutY="66.0" prefHeight="374.0" prefWidth="343.0" />
+                  <VBox prefHeight="689.0" prefWidth="609.0" style="-fx-background-color: #fafafa; -fx-background-radius: 2;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                      <Label layoutX="21.0" layoutY="4.0" text="Alimentos disponibles">
+                          <font>
+                              <Font name="System Bold" size="22.0" />
+                          </font>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                        <VBox.margin>
+                           <Insets left="5.0" />
+                        </VBox.margin></Label>
+                      <TextField fx:id="buscadorInput" layoutX="22.0" layoutY="53.0" prefHeight="25.0" prefWidth="604.0" promptText="Buscar">
+                          <font>
+                              <Font size="18.0" />
+                          </font>
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" />
+                        </VBox.margin></TextField>
+                      <TableView fx:id="tabla_buscador" layoutX="22.0" layoutY="106.0" prefHeight="518.0" prefWidth="604.0">
+                          <columns>
+                              <TableColumn fx:id="c_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
+                              <TableColumn fx:id="c_tipo" prefWidth="111.0" text="Tipo" />
+                              <TableColumn fx:id="c_calorias" prefWidth="76.0" text="Calorias" />
+                              <TableColumn fx:id="c_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
+                              <TableColumn fx:id="c_proteinas" prefWidth="75.0" text="Proteinas" />
+                              <TableColumn fx:id="c_lipidos" prefWidth="64.0" text="Lipidos" />
+                              <TableColumn fx:id="c_accion" prefWidth="66.0" text="Agregar" />
+                          </columns>
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" />
+                        </VBox.margin>
+                      </TableView>
+                      <Pane layoutX="19.0" layoutY="643.0" maxHeight="128.0" prefHeight="52.0" prefWidth="604.0">
+                          <children>
+                              <Button layoutX="473.0" layoutY="7.0" mnemonicParsing="false" onAction="#crearDieta" style="-fx-background-color: #f57170; -fx-background-radius: 10;" text="Crear dieta" textFill="WHITE">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                                  <effect>
+                                      <DropShadow />
+                                  </effect>
+                                  <cursor>
+                                      <Cursor fx:constant="HAND" />
+                                  </cursor></Button>
+                              <CheckBox layoutX="328.0" layoutY="17.0" mnemonicParsing="false" text="Generar PDF">
+                                  <font>
+                                      <Font name="System Bold Italic" size="14.0" />
+                                  </font>
+                                  <cursor>
+                                      <Cursor fx:constant="CLOSED_HAND" />
+                                  </cursor></CheckBox>
+                              <Button layoutX="14.0" layoutY="7.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: #f57170; -fx-background-radius: 10;" text="Limpiar datos" textFill="WHITE">
+                                  <font>
+                                      <Font name="System Bold" size="18.0" />
+                                  </font>
+                                  <effect>
+                                      <DropShadow />
+                                  </effect>
+                                  <cursor>
+                                      <Cursor fx:constant="DEFAULT" />
+                                  </cursor></Button>
+                          </children>
+                        <VBox.margin>
+                           <Insets left="5.0" top="15.0" />
+                        </VBox.margin>
+                      </Pane>
+                     <effect>
+                        <DropShadow />
+                     </effect>
 
-                  <Pane layoutX="19.0" layoutY="448.0" maxHeight="128.0" prefHeight="39.0" prefWidth="349.0">
-                     <children>
-                        <Button layoutX="269.0" layoutY="7.0" mnemonicParsing="false" onAction="#crearDieta" text="Crear dieta" />
-                        <CheckBox layoutX="168.0" layoutY="11.0" mnemonicParsing="false" text="Generar PDF" />
-                        <Button layoutY="7.0" mnemonicParsing="false" text="Limpiar datos" />
-                     </children>
-                  </Pane>
-                  <Label layoutX="21.0" layoutY="6.0" text="Alimentos disponibles" />
-                  <TableView fx:id="tabla_buscador" layoutX="22.0" layoutY="87.0" prefHeight="351.0" prefWidth="343.0">
-                    <columns>
-                      <TableColumn fx:id="c_nombre" prefWidth="92.0" text="Alimento" />
-                        <TableColumn fx:id="c_tipo" prefWidth="117.0" text="Tipo" />
-                        <TableColumn fx:id="c_calorias" prefWidth="66.0" text="Calorias" />
-                      <TableColumn fx:id="c_accion" prefWidth="66.0" text="Agregar" />
-                    </columns>
-                  </TableView>
+                  </VBox>
                </children>
-            </Pane>
+            </GridPane>
+
          </children>
       </GridPane>
    </children>

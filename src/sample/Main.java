@@ -12,8 +12,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));
         primaryStage.setTitle("Diet Maker");
-        primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(root, 774, 525));
+        /*primaryStage.setResizable(false);*/
+        primaryStage.setScene(new Scene(root, 1280 , 720));
         primaryStage.show();
     }
 

@@ -1,15 +1,65 @@
 {
   "Frutas": {
-    "Caña": 65,
-    "Cereza": 41,
-    "Ciruela": 46,
-    "Dátiles": 107,
-    "Durazno": 74,
-    "Fresa": 23,
-    "Granada roja":  57,
-    "Guayaba": 46,
-    "Higo": 54,
-    "Mandarina": 44
+    "Caña": {
+      "calorias": 65,
+      "carbohidratos": 17.24,
+      "proteinas": 0.25,
+      "lipidos": null
+    },
+    "Cereza": {
+      "calorias": 41,
+      "carbohidratos": 9.66,
+      "proteinas": 1.37,
+      "lipidos": 0.0
+    },
+    "Ciruela": {
+      "calorias": 46,
+      "carbohidratos": 11.42,
+      "proteinas": 0.61,
+      "lipidos": 0.0
+    },
+    "Dátiles": {
+      "calorias": 107.00,
+      "carbohidratos": 27.32,
+      "proteinas": 1.66,
+      "lipidos": null
+    },
+    "Durazno": {
+      "calorias": 74,
+      "carbohidratos": 18.94,
+      "proteinas": 1.43,
+      "lipidos": 0.0
+    },
+    "Fresa": {
+      "calorias": 23,
+      "carbohidratos": 5.28,
+      "proteinas": 0.84,
+      "lipidos": 0.0
+    },
+    "Granada roja": {
+      "calorias": 57,
+      "carbohidratos": 12.53,
+      "proteinas": 2.21,
+      "lipidos": 0.0
+    },
+    "Guayaba": {
+      "calorias": 46,
+      "carbohidratos": 15.57,
+      "proteinas": 0.98,
+      "lipidos": 0.0
+    },
+    "Higo": {
+      "calorias": 54,
+      "carbohidratos": 12.24,
+      "proteinas": 1.66,
+      "lipidos": 0.0
+    },
+    "Mandarina": {
+      "calorias": 44,
+      "carbohidratos": 11.24,
+      "proteinas": 1.0,
+      "lipidos": 0.0
+    }
   },
   "Verduras": {
     "Acelga":20,
@@ -36,17 +86,67 @@
     "Rábano": 11
   },
 
-  "Leguminosas y Derivados":{
-    "Cacahuate":519,
-    "Frijol amarillo":336,
-    "Frijol bayo desidratado":397.39,
-    "Frijol cocido":75.50,
-    "Frijol enlatado":87.40,
-    "Frijol Mexicano":341,
-    "Frijol molido":320,
-    "Frijol negro":328,
-    "Garbanzo cocido":118,
-    "Haba seca":341
+  "Leguminosas y derivados":{
+    "Cacahuate dorado":{
+      "calorias": 545.20,
+      "carbohidratos": 48,
+      "proteinas": 12.70,
+      "lipidos": null
+    },
+    "Frijol amarillo":{
+      "calorias": 336,
+      "carbohidratos": 67.09,
+      "proteinas": 14.20,
+      "lipidos": 0.0
+    },
+    "Frijol bayo desidratado":{
+      "calorias": 397.39,
+      "carbohidratos": 60.87,
+      "proteinas": 19.63,
+      "lipidos": 0.0
+    },
+    "Frijol cocido (entero)":{
+      "calorias": 75.50,
+      "carbohidratos": 12.89,
+      "proteinas": 5.90,
+      "lipidos": null
+    },
+    "Frijol enlatado":{
+      "calorias": 87.40,
+      "carbohidratos": 14.80,
+      "proteinas": 4.80,
+      "lipidos": 0.0
+    },
+    "Frijol Mexicano":{
+      "calorias": 341,
+      "carbohidratos": 62.91,
+      "proteinas": 20.20,
+      "lipidos": null
+    },
+    "Frijol molido":{
+      "calorias": 320,
+      "carbohidratos": 60.00,
+      "proteinas": 17.90,
+      "lipidos": null
+    },
+    "Frijol negro":{
+      "calorias": 328,
+      "carbohidratos": 55.88,
+      "proteinas": 20.84,
+      "lipidos": 0.0
+    },
+    "Garbanzo cocido":{
+      "calorias": 118.00,
+      "carbohidratos": 21.10,
+      "proteinas": 8.34,
+      "lipidos": null
+    },
+    "Haba seca":{
+      "calorias": 341,
+      "carbohidratos": 58.29,
+      "proteinas": 22.60,
+      "lipidos": null
+    }
   },
 
   "Varios": {
@@ -62,16 +162,67 @@
     "Paella normal": 191.20
   },
   "Origen animal": {
-    "Lomo":     109,
-    "Bisteck":    263,
-    "Filete pavo":    135.80,
-    "Carne molida":    160.50,
-    "Chicharron":    530,
-    "Jamon horneado":    95,
-    "Peperoni":  494,
-    "Salami italiano":    407,
-    "Salchicha para asar"    :  447,
-    "Salchicha enlatada" :    99
+    "Tripas": {
+      "calorias": 85.0,
+      "carbohidratos": 0.0,
+      "proteinas": 11.30,
+      "lipidos": 122.0
+    },
+    "Rosbeef": {
+      "calorias": 223,
+      "carbohidratos": 3.73,
+      "proteinas": 15.27,
+      "lipidos": 70
+    },
+    "Pierna ": {
+      "calorias": 219.0,
+      "carbohidratos": 0.0,
+      "proteinas": 29.10,
+      "lipidos": 87.0
+    },
+    "Carne ": {
+      "calorias": 143.00,
+      "carbohidratos": 0,
+      "proteinas": 23.90,
+      "lipidos": 69.0
+    },
+    "Chicharron": {
+      "calorias": 530,
+      "carbohidratos": 0,
+      "proteinas": 58.45,
+      "lipidos": 74
+    },
+    "Jamón horneado": {
+      "calorias": 95,
+      "carbohidratos": 1.70,
+      "proteinas": 13.83,
+      "lipidos": 59
+    },
+    "Peperoni": {
+      "calorias": 494,
+      "carbohidratos": 2.57,
+      "proteinas": 17.29,
+      "lipidos": 7.28
+    },
+    "Salami Italiano": {
+      "calorias": 407,
+      "carbohidratos": 7.73,
+      "proteinas": 21.04,
+      "lipidos": 5.08
+    },
+    "Salchicha enlatada": {
+      "calorias": 99,
+      "carbohidratos": 2.40,
+      "proteinas": 13.30,
+      "lipidos": null
+    },
+    "Salchicha para asar": {
+      "calorias": 447,
+      "carbohidratos": 21.70,
+      "proteinas": 16.20,
+      "lipidos": null
+    }
+
   },
   "Pescados":{
     "Atún en aceite":174.0,
@@ -85,5 +236,4 @@
     "Cazón crudo":106,
     "Charal crudo":88
   }
-
 }

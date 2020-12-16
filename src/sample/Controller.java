@@ -18,6 +18,7 @@ import sample.user.DataUser;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
+import javax.json.JsonValue;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.URL;
@@ -234,6 +235,16 @@ public class Controller implements Initializable {
         generoSelected.getItems().addAll(lista_genero);
     }
 
+    //Identifica los valores null en json
+    private float getValueFromJson(JsonValue x){
+        String value = x.toString();
+        if(value.equals("null")){
+            return (float) 0;
+        } else{
+            return Float.parseFloat(value);
+        }
+    }
+
     public void llenarTablaBuscador() {
         lista_buscador=FXCollections.observableArrayList();
         try {
@@ -247,9 +258,13 @@ public class Controller implements Initializable {
                 // Iterar sobre cada alimento consiguiente todas la llaves/
                 for(String alimento2 : platillo.keySet() ){
                     // Conseguir cada valor de alimento
-                    Buscador buscador = new Buscador(
-                            alimento2,tipo_plato,
-                            Float.parseFloat(String.valueOf(platillo.get(alimento2))));
+                    JsonObject platillo_base = (JsonObject) platillo.get(alimento2);
+                    float calorias = getValueFromJson(platillo_base.get("calorias"));
+                    float carbohidratos = getValueFromJson(platillo_base.get("carbohidratos"));
+                    float proteinas = getValueFromJson(platillo_base.get("carbohidratos"));
+                    float lipidos = getValueFromJson(platillo_base.get("lipidos"));
+
+                    Buscador buscador = new Buscador(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos);
                     lista_buscador.add(buscador);
                 }
             }
@@ -258,7 +273,7 @@ public class Controller implements Initializable {
             c_calorias.setCellValueFactory(new PropertyValueFactory<Buscador,Number>("calorias"));
 
             Callback<TableColumn<Buscador,String>, TableCell<Buscador,String>> cellFactory = (param) -> {
-                final TableCell<Buscador,String> cell = new TableCell<Buscador,String>(){
+                return new TableCell<Buscador,String>(){
                     @Override
                     public void updateItem(String item,boolean empty){
                         super.updateItem(item, empty);
@@ -269,11 +284,10 @@ public class Controller implements Initializable {
                         else{
                             final Button entregar= new Button(" + ");
                             entregar.setOnAction(event -> {
-
                                 Buscador b=getTableView().getItems().get(getIndex());
                                 try {
                                     //Accion del boton
-                                    Alimento alimento = new Alimento(b.getNombre(),b.getCalorias(),b.getTipo());
+                                    Alimento alimento = new Alimento(b.getNombre(),b.getTipo(), b.getCalorias(),b.getCarbohidratos(), b.getProteinas(), b.getLipidos());
                                     if(addAlimento(alimento)){
                                         // Eliminar si se ha agregado a la lista
                                         getTableView().getItems().remove(getIndex());
@@ -289,7 +303,6 @@ public class Controller implements Initializable {
                         }
                     }
                 };
-                return cell;
             };
             //Agregar boton a la celda
             c_accion.setCellFactory(cellFactory);
@@ -328,13 +341,15 @@ public class Controller implements Initializable {
                     i++;
                 }
 
-                // Si las letras de la búsqueda coinciden, se añade el alimento
-                // a la lista
-                if (ok)
-                {
-                    Buscador buscador = new Buscador(
-                            alimento2,tipo_plato,
-                            Float.parseFloat(String.valueOf(platillo.get(alimento2))));
+                // Si las letras de la búsqueda coinciden, se añade el alimento a la lista
+                if (ok) {
+                    JsonObject platillo_base = (JsonObject) platillo.get(alimento2);
+                    float calorias = getValueFromJson(platillo_base.get("calorias"));
+                    float carbohidratos = getValueFromJson(platillo_base.get("carbohidratos"));
+                    float proteinas = getValueFromJson(platillo_base.get("carbohidratos"));
+                    float lipidos = getValueFromJson(platillo_base.get("lipidos"));
+
+                    Buscador buscador = new Buscador(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos);
                     lista_buscador.add(buscador);
                     tabla_buscador.setItems(lista_buscador);
                 }
