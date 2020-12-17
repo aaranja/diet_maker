@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TableView fx:id="selected_table" prefHeight="605.0" prefWidth="613.0">
+          <columns>
+              <TableColumn fx:id="a_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
+              <TableColumn fx:id="a_gramos" prefWidth="64.0" text="Gramos" />
+              <TableColumn fx:id="a_tipo" prefWidth="111.0" text="Tipo" />
+              <TableColumn fx:id="a_calorias" prefWidth="76.0" text="Calorias" />
+              <TableColumn fx:id="a_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
+              <TableColumn fx:id="a_proteinas" prefWidth="75.0" text="Proteinas" />
+              <TableColumn fx:id="a_lipidos" prefWidth="64.0" text="Lipidos" />
+          </columns>
+      </TableView>
+   </children>
+</GridPane>

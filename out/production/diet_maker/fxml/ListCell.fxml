@@ -16,6 +16,6 @@
     <children>
         <Label fx:id="labelNombre" text="Label" GridPane.columnIndex="1" />
         <Label fx:id="labelGramos" text="Label" GridPane.columnIndex="3" />
-      <Label fx:id="labelIndex" text="Ind" />
+        <Label fx:id="labelIndex" text="Ind" />
     </children>
 </GridPane>

@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
-import sample.buscador.Buscador;
 import sample.buscador.Alimento;
 import sample.lista.AlimentoItem;
 import sample.lista.AlimentoListViewCell;
@@ -26,8 +25,19 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+    public TableColumn<AlimentoItem, String> a_nombre;
+    public TableColumn<AlimentoItem, String> a_tipo;
+    public TableColumn<AlimentoItem, Number> a_calorias;
+    public TableColumn<AlimentoItem, Number> a_carbohidratos;
+    public TableColumn<AlimentoItem, Number> a_proteinas;
+    public TableColumn<AlimentoItem, Number> a_lipidos;
+    public TableColumn a_accion;
+    public TableColumn<AlimentoItem, String> a_gramos;
     /* Tabla de selección de alimentos*/
-    @FXML private TableView <Buscador>tabla_buscador;
+    @FXML private TableView <Alimento>tabla_buscador;
+
+    /* Tabla de alimentos seleccionados */
+    @FXML private TableView <AlimentoItem> tabla_seleccionado;
 
     /* Datos de entrada del usuario */
     @FXML private TextField nombreInput;
@@ -40,13 +50,16 @@ public class Controller implements Initializable {
     private ObservableList<String> lista_genero = FXCollections.observableArrayList();
 
     /* Columnas de selección de alimento */
-    @FXML private TableColumn<Buscador,String>c_nombre;
-    @FXML private TableColumn<Buscador,String>c_tipo;
-    @FXML private TableColumn<Buscador,Number>c_calorias;
-    @FXML private TableColumn<Buscador, String> c_accion;
+    @FXML private TableColumn<Alimento,String>c_nombre;
+    @FXML private TableColumn<Alimento,String>c_tipo;
+    @FXML private TableColumn<Alimento,Number>c_calorias;
+    @FXML private TableColumn<Alimento,String>c_accion;
+    @FXML private TableColumn<Alimento,Number>c_carbohidratos;
+    @FXML private TableColumn<Alimento,Number>c_lipidos;
+    @FXML private TableColumn<Alimento,Number>c_proteinas;
 
-    //Lista buscador
-    private ObservableList<Buscador>lista_buscador;
+    //Lista Alimento
+    private ObservableList<Alimento>lista_buscador;
     //Textfield buscador
     @FXML private TextField buscadorInput;
     //json
@@ -54,7 +67,7 @@ public class Controller implements Initializable {
     JsonReader rdr;
     private JsonObject obj;
 
-    @FXML private ListView<AlimentoItem> lista_alimentos;
+    //@FXML private ListView<AlimentoItem> lista_alimentos;
     @FXML private Button add_alimento;
     private ObservableList<AlimentoItem> alimentoObservableList;
 
@@ -121,9 +134,8 @@ public class Controller implements Initializable {
 
                 /* Datos de salida */
 
-
-                alert_talla.setText("");
-            } else showAlert("Error", "", "Por favor, introduzca todos los datos requeridos!");
+            alert_talla.setText("");
+            /*else showAlert("Error", "", "Por favor, introduzca todos los datos requeridos!");*/
         }else showAlert("Error", "", "Por favor, seleccione al menos un alimento!");
 
         return true;
@@ -179,26 +191,41 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         /* Cargar lista de género */
         cargarGenero();
+        /* Asignar propiedad de solo flotantes  */
         onlyFloat(alturaInput);
         onlyFloat(pesoInput);
         onlyInt(edadInput);
 
-        /* Añadir alimentos a la lista*/
-        lista_alimentos.setItems(alimentoObservableList);
+        /* Darle propiedades a la tabla de alimentos seleccionados */
+        setPropertiesToSelectedTable();
 
         /*Buscar alimentos en el json*/
         buscadorInput.setOnKeyTyped(event -> {
             buscarAlimento();
         });
 
-        /* Darle propiedades a cada fila de la lista*/
-        lista_alimentos.setCellFactory(alimentoListView -> {
-            ListCell<AlimentoItem> cell = new AlimentoListViewCell();
+        /*Añadir alimentos al buscador*/
+        llenarTablaBuscador();
+    }
 
-            /* Crear menu de alimento */
+    private void setPropertiesToSelectedTable(){
+        /* Añadir alimentos a la lista*/
+        tabla_seleccionado.setItems(alimentoObservableList);
+
+        a_nombre.setCellValueFactory(new PropertyValueFactory<AlimentoItem,String>("nombre"));
+        a_gramos.setCellValueFactory(new PropertyValueFactory<AlimentoItem,String>("gramos"));
+        a_tipo.setCellValueFactory(new PropertyValueFactory<AlimentoItem,String>("tipo"));
+        a_calorias.setCellValueFactory(new PropertyValueFactory<AlimentoItem,Number>("calorias"));
+        a_carbohidratos.setCellValueFactory(new PropertyValueFactory<AlimentoItem,Number>("carbohidratos"));
+        a_proteinas.setCellValueFactory(new PropertyValueFactory<AlimentoItem,Number>("proteinas"));
+        a_lipidos.setCellValueFactory(new PropertyValueFactory<AlimentoItem,Number>("lipidos"));
+
+        tabla_seleccionado.setRowFactory(alimentoTableView -> {
+            TableRow<AlimentoItem> row = new TableRow<>();
+            //* Crear menu de alimento *//
             ContextMenu contextMenu = new ContextMenu();
 
-            /* Opción de menu editar gramos de alimento */
+            //* Opción de menu editar gramos de alimento *//
             MenuItem editGramos = new MenuItem();
             editGramos.textProperty().bind(Bindings.format("Editar gramos"));
             editGramos.setOnAction(event -> {
@@ -207,24 +234,23 @@ public class Controller implements Initializable {
 
             /* Opción de menu eliminar alimento de la lista*/
             MenuItem eliminarAlimento = new MenuItem();
-            eliminarAlimento.textProperty().bind(Bindings.format("Eliminar \"%s\"", cell.itemProperty()));
-            eliminarAlimento.setOnAction(event -> lista_alimentos.getItems().remove(cell.getItem()));
+            eliminarAlimento.textProperty().bind(Bindings.format("Eliminar \"%s\"", row.itemProperty()));
+            eliminarAlimento.setOnAction(event -> tabla_seleccionado.getItems().remove(row.getItem()));
 
             /* Añadir el menú a cada fila*/
             contextMenu.getItems().addAll(editGramos, eliminarAlimento);
 
             /* Quitar propiedad a una fila que se ha eliminado */
-            cell.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
+            row.emptyProperty().addListener((obs, wasEmpty, isNowEmpty) -> {
                 if (isNowEmpty){
-                    cell.setContextMenu(null);
+                    row.setContextMenu(null);
                 } else {
-                    cell.setContextMenu(contextMenu);
+                    row.setContextMenu(contextMenu);
                 }
             });
-            return cell;
+
+            return row;
         });
-        /*Añadir alimentos al buscador*/
-        llenarTablaBuscador();
     }
 
     private void cargarGenero(){
@@ -264,16 +290,19 @@ public class Controller implements Initializable {
                     float proteinas = getValueFromJson(platillo_base.get("carbohidratos"));
                     float lipidos = getValueFromJson(platillo_base.get("lipidos"));
 
-                    Buscador buscador = new Buscador(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos);
+                    Alimento buscador = new Alimento(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos);
                     lista_buscador.add(buscador);
                 }
             }
-            c_nombre.setCellValueFactory(new PropertyValueFactory<Buscador,String>("nombre"));
-            c_tipo.setCellValueFactory(new PropertyValueFactory<Buscador,String>("tipo"));
-            c_calorias.setCellValueFactory(new PropertyValueFactory<Buscador,Number>("calorias"));
+            c_nombre.setCellValueFactory(new PropertyValueFactory<Alimento,String>("nombre"));
+            c_tipo.setCellValueFactory(new PropertyValueFactory<Alimento,String>("tipo"));
+            c_calorias.setCellValueFactory(new PropertyValueFactory<Alimento,Number>("calorias"));
+            c_carbohidratos.setCellValueFactory(new PropertyValueFactory<Alimento,Number>("carbohidratos"));
+            c_proteinas.setCellValueFactory(new PropertyValueFactory<Alimento,Number>("proteinas"));
+            c_lipidos.setCellValueFactory(new PropertyValueFactory<Alimento,Number>("lipidos"));
 
-            Callback<TableColumn<Buscador,String>, TableCell<Buscador,String>> cellFactory = (param) -> {
-                return new TableCell<Buscador,String>(){
+            Callback<TableColumn<Alimento,String>, TableCell<Alimento,String>> cellFactory = (param) -> {
+                return new TableCell<Alimento,String>(){
                     @Override
                     public void updateItem(String item,boolean empty){
                         super.updateItem(item, empty);
@@ -284,7 +313,7 @@ public class Controller implements Initializable {
                         else{
                             final Button entregar= new Button(" + ");
                             entregar.setOnAction(event -> {
-                                Buscador b=getTableView().getItems().get(getIndex());
+                                Alimento b=getTableView().getItems().get(getIndex());
                                 try {
                                     //Accion del boton
                                     Alimento alimento = new Alimento(b.getNombre(),b.getTipo(), b.getCalorias(),b.getCarbohidratos(), b.getProteinas(), b.getLipidos());
@@ -349,7 +378,7 @@ public class Controller implements Initializable {
                     float proteinas = getValueFromJson(platillo_base.get("carbohidratos"));
                     float lipidos = getValueFromJson(platillo_base.get("lipidos"));
 
-                    Buscador buscador = new Buscador(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos);
+                    Alimento buscador = new Alimento(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos);
                     lista_buscador.add(buscador);
                     tabla_buscador.setItems(lista_buscador);
                 }
