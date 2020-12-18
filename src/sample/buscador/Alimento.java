@@ -23,6 +23,15 @@ public class Alimento {
         this.cantidad = cantidad;
     }
 
+    public Alimento(String nombre, Float gramos, Float calorias, Float proteinas, Float lipidos, Float carbohidratos){
+        this.nombre = nombre;
+        this.peso_neto = gramos;
+        this.calorias = calorias;
+        this.proteinas = proteinas;
+        this.lipidos = lipidos;
+        this.carbohidratos = carbohidratos;
+    }
+
     public String getNombre() { return nombre; }
 
     public void setNombre(String nombre) { this.nombre = nombre; }

@@ -7,326 +7,498 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
-   <children>
-      <MenuBar layoutY="2.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <GridPane alignment="CENTER" layoutX="6.0" layoutY="38.0" maxHeight="1.7976931348623157E308" prefHeight="682.0" prefWidth="1280.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0"
+            prefWidth="1280.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <MenuBar layoutY="2.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="1280.0"
+             AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Menu mnemonicParsing="false" text="File">
+            <MenuItem mnemonicParsing="false" text="Close"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+            <MenuItem mnemonicParsing="false" text="Delete"/>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+            <MenuItem mnemonicParsing="false" text="About" onAction="#goYoutube"/>
+        </Menu>
+    </MenuBar>
+    <GridPane alignment="CENTER" layoutX="6.0" layoutY="38.0" maxHeight="1.7976931348623157E308" prefHeight="682.0"
+              prefWidth="1280.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="240.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="792.0" minWidth="10.0" prefWidth="637.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="240.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="792.0" minWidth="10.0" prefWidth="637.0"/>
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="197.0" vgrow="SOMETIMES" />
-            <RowConstraints />
-            <RowConstraints />
+            <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="197.0" vgrow="SOMETIMES"/>
+            <RowConstraints/>
+            <RowConstraints/>
         </rowConstraints>
-         <children>
+        <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="622.0"
+              style="-fx-background-color: #fafafa; -fx-background-radius: 2;" GridPane.columnIndex="1"
+              GridPane.rowSpan="3">
+            <Label text="Alimentos disponibles">
+                <font>
+                    <Font name="System Bold" size="22.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+                <VBox.margin>
+                    <Insets bottom="5.0" left="10.0" top="10.0"/>
+                </VBox.margin>
+            </Label>
+            <TextField fx:id="buscadorInput" layoutX="22.0" layoutY="53.0" prefHeight="25.0" prefWidth="604.0"
+                       promptText="Buscar" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+                <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0"/>
+                </VBox.margin>
+            </TextField>
+            <TableView fx:id="tabla_buscador" layoutX="22.0" layoutY="106.0" prefHeight="514.0" prefWidth="600.0"
+                       VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="c_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="nombre"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_tipo" prefWidth="111.0" text="Tipo">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="tipo"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_cantidad" prefWidth="64.0" text="Cantidad">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="cantidad"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_unidad" prefWidth="64.0" text="Unidad">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="unidad"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_peso_neto" prefWidth="64.0" text="Peso Neto">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="pesoNeto"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_calorias" prefWidth="76.0" text="Calorias">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="calorias"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_carbohidratos" prefWidth="89.0" text="Carbohidratos">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="carbohidratos"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_proteinas" prefWidth="75.0" text="Proteinas">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="proteinas"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_lipidos" prefWidth="64.0" text="Lipidos">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="lipidos"/>
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="c_accion" prefWidth="66.0" text="Agregar"/>
 
-            <VBox alignment="TOP_CENTER" prefHeight="676.0" prefWidth="622.0" style="-fx-background-color: #fafafa; -fx-background-radius: 2;" GridPane.columnIndex="1" GridPane.rowSpan="3">
-               <Label text="Alimentos disponibles">
-                  <font>
-                     <Font name="System Bold" size="22.0" />
-                  </font>
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-                  <VBox.margin>
-                     <Insets bottom="5.0" left="10.0" top="10.0" />
-                  </VBox.margin>
-               </Label>
-                <TextField fx:id="buscadorInput" layoutX="22.0" layoutY="53.0" prefHeight="25.0" prefWidth="604.0" promptText="Buscar" style="-fx-background-color: white; -fx-background-radius: 10;">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                  <VBox.margin>
-                     <Insets bottom="10.0" left="10.0" right="10.0" />
-                  </VBox.margin>
-               </TextField>
-                <TableView fx:id="tabla_buscador" layoutX="22.0" layoutY="106.0" prefHeight="514.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
-                    <columns>
-                        <TableColumn fx:id="c_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
-                        <TableColumn fx:id="c_tipo" prefWidth="111.0" text="Tipo" />
-                        <TableColumn fx:id="c_cantidad" prefWidth="64.0" text="Cantidad" />
-                        <TableColumn fx:id="c_unidad" prefWidth="64.0" text="Unidad" />
-                        <TableColumn fx:id="c_peso_neto" prefWidth="64.0" text="Peso Neto" />
-                        <TableColumn fx:id="c_calorias" prefWidth="76.0" text="Calorias" />
-                        <TableColumn fx:id="c_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
-                        <TableColumn fx:id="c_proteinas" prefWidth="75.0" text="Proteinas" />
-                        <TableColumn fx:id="c_lipidos" prefWidth="64.0" text="Lipidos" />
-                        <TableColumn fx:id="c_accion" prefWidth="66.0" text="Agregar" />
-                    </columns>
-                  <VBox.margin>
-                     <Insets bottom="10.0" left="10.0" right="10.0" />
-                  </VBox.margin>
-                </TableView>
-               <GridPane alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="620.0">
-                 <columnConstraints>
-                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="134.0" prefWidth="343.0" />
-                   <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="263.0" minWidth="114.0" prefWidth="130.0" />
-                   <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="153.0" minWidth="131.0" prefWidth="147.0" />
-                 </columnConstraints>
-                 <rowConstraints>
-                   <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                 </rowConstraints>
-                  <children>
-                        <Button alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#crearDieta" prefHeight="39.0" prefWidth="124.0" style="-fx-background-color: #f57170; -fx-background-radius: 10;" text="Crear dieta" textFill="WHITE" GridPane.columnIndex="2">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                            <effect>
-                                <DropShadow />
-                            </effect>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
+                </columns>
+                <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0"/>
+                </VBox.margin>
+            </TableView>
+            <GridPane alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="620.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="134.0" prefWidth="343.0"/>
+                    <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" maxWidth="263.0"
+                                       minWidth="114.0" prefWidth="130.0"/>
+                    <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="153.0" minWidth="131.0"
+                                       prefWidth="147.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <children>
+                    <Button alignment="TOP_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false"
+                            nodeOrientation="LEFT_TO_RIGHT" onAction="#crearDieta" prefHeight="39.0"
+                            prefWidth="124.0" style="-fx-background-color: #f57170; -fx-background-radius: 10;"
+                            text="Crear dieta" textFill="WHITE" GridPane.columnIndex="2">
+                        <font>
+                            <Font name="System Bold" size="18.0"/>
+                        </font>
+                        <effect>
+                            <DropShadow/>
+                        </effect>
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
                         <GridPane.margin>
-                           <Insets bottom="10.0" left="10.0" right="10.0" />
+                            <Insets bottom="10.0" left="10.0" right="10.0"/>
                         </GridPane.margin>
-                     </Button>
-                        <CheckBox contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="20.0" prefWidth="117.0" text="Generar PDF" GridPane.columnIndex="1">
-                            <font>
-                                <Font name="System Bold Italic" size="14.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="CLOSED_HAND" />
-                            </cursor>
+                    </Button>
+                    <CheckBox contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT"
+                              prefHeight="20.0" prefWidth="117.0" text="Generar PDF" GridPane.columnIndex="1">
+                        <font>
+                            <Font name="System Bold Italic" size="14.0"/>
+                        </font>
+                        <cursor>
+                            <Cursor fx:constant="CLOSED_HAND"/>
+                        </cursor>
                         <GridPane.margin>
-                           <Insets bottom="10.0" left="10.0" />
+                            <Insets bottom="10.0" left="10.0"/>
                         </GridPane.margin>
-                     </CheckBox>
-                        <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: #f57170; -fx-background-radius: 10;" text="Limpiar datos" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                            <effect>
-                                <DropShadow />
-                            </effect>
-                            <cursor>
-                                <Cursor fx:constant="DEFAULT" />
-                            </cursor>
+                    </CheckBox>
+                    <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="142.0"
+                            style="-fx-background-color: #f57170; -fx-background-radius: 10;" text="Limpiar datos"
+                            textFill="WHITE">
+                        <font>
+                            <Font name="System Bold" size="18.0"/>
+                        </font>
+                        <effect>
+                            <DropShadow/>
+                        </effect>
+                        <cursor>
+                            <Cursor fx:constant="DEFAULT"/>
+                        </cursor>
                         <GridPane.margin>
-                           <Insets bottom="10.0" left="10.0" />
+                            <Insets bottom="10.0" left="10.0"/>
                         </GridPane.margin>
-                     </Button>
-                  </children>
-               </GridPane>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" />
-               </effect>
-               <GridPane.margin>
-                  <Insets bottom="10.0" left="5.0" right="10.0" top="10.0" />
-               </GridPane.margin>
+                    </Button>
+                </children>
+            </GridPane>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX"/>
+            </effect>
+            <GridPane.margin>
+                <Insets bottom="10.0" left="5.0" right="10.0" top="10.0"/>
+            </GridPane.margin>
 
-            </VBox>
-             <VBox minWidth="240.0" style="-fx-background-radius: 2; -fx-background-color: #fafafa;">
-               <Label layoutX="10.0" layoutY="131.0" prefHeight="32.0" prefWidth="69.0" text="Datos">
-                  <font>
-                     <Font name="System Bold" size="22.0" />
-                  </font>
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-                  <VBox.margin>
-                     <Insets left="10.0" top="10.0" />
-                  </VBox.margin>
-               </Label>
-                 <GridPane minHeight="141.0" minWidth="240.0" prefHeight="141.0" prefWidth="633.0">
-                     <columnConstraints>
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="113.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="0.0" prefWidth="21.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="136.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="49.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="95.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="22.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="169.0" />
-                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="9.0" prefWidth="9.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                         <RowConstraints maxHeight="240.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                         <RowConstraints maxHeight="254.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
-                         <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                         <Label text="Nombre:">
-                             <font>
-                                 <Font size="20.0" />
-                             </font>
+        </VBox>
+        <VBox minWidth="240.0" style="-fx-background-radius: 2; -fx-background-color: #fafafa;">
+            <Label layoutX="10.0" layoutY="131.0" prefHeight="32.0" prefWidth="69.0" text="Datos">
+                <font>
+                    <Font name="System Bold" size="22.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+                <VBox.margin>
+                    <Insets left="10.0" top="10.0"/>
+                </VBox.margin>
+            </Label>
+            <GridPane minHeight="141.0" minWidth="240.0" prefHeight="141.0" prefWidth="633.0">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="113.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="0.0" prefWidth="21.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="136.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="49.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="95.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="22.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="10.0" prefWidth="169.0"/>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="526.0" minWidth="9.0" prefWidth="9.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="240.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="254.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES"/>
+                    <RowConstraints maxHeight="297.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <children>
+                    <Label text="Nombre:">
+                        <font>
+                            <Font size="20.0"/>
+                        </font>
                         <opaqueInsets>
-                           <Insets left="5.0" />
+                            <Insets left="5.0"/>
                         </opaqueInsets>
                         <GridPane.margin>
-                           <Insets left="10.0" />
+                            <Insets left="10.0"/>
                         </GridPane.margin>
-                     </Label>
-                         <Label text="Edad:" GridPane.rowIndex="2">
-                             <font>
-                                 <Font size="20.0" />
-                             </font>
+                    </Label>
+                    <Label text="Edad:" GridPane.rowIndex="2">
+                        <font>
+                            <Font size="20.0"/>
+                        </font>
                         <GridPane.margin>
-                           <Insets left="10.0" />
+                            <Insets left="10.0"/>
                         </GridPane.margin>
-                     </Label>
-                         <Label prefHeight="56.0" prefWidth="76.0" text="Género:" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                             <font>
-                                 <Font size="20.0" />
-                             </font>
-                     </Label>
-                         <TextField fx:id="nombreInput" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowSpan="1">
-                             <font>
-                                 <Font size="18.0" />
-                             </font>
-                     </TextField>
+                    </Label>
+                    <Label prefHeight="56.0" prefWidth="76.0" text="Género:" GridPane.columnIndex="4"
+                           GridPane.rowIndex="2">
+                        <font>
+                            <Font size="20.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="nombreInput" style="-fx-background-color: white; -fx-background-radius: 10;"
+                               GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.rowSpan="1">
+                        <font>
+                            <Font size="18.0"/>
+                        </font>
+                    </TextField>
 
-                         <TextField fx:id="alturaInput" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                             <font>
-                                 <Font size="18.0" />
-                             </font>
-                     </TextField>
-                         <TextField fx:id="edadInput" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                             <font>
-                                 <Font size="18.0" />
-                             </font>
-                         </TextField>
-                         <TextField fx:id="pesoInput" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="6" GridPane.rowIndex="1">
-                             <font>
-                                 <Font size="18.0" />
-                             </font>
-                     </TextField>
-                         <Label text="Altura:" GridPane.rowIndex="1">
-                             <font>
-                                 <Font size="20.0" />
-                             </font>
+                    <TextField fx:id="alturaInput" prefHeight="25.0" prefWidth="95.0"
+                               style="-fx-background-color: white; -fx-background-radius: 10;"
+                               GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <font>
+                            <Font size="18.0"/>
+                        </font>
+                    </TextField>
+                    <TextField fx:id="edadInput" style="-fx-background-color: white; -fx-background-radius: 10;"
+                               GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <font>
+                            <Font size="18.0"/>
+                        </font>
+                    </TextField>
+                    <TextField fx:id="pesoInput" style="-fx-background-color: white; -fx-background-radius: 10;"
+                               GridPane.columnIndex="6" GridPane.rowIndex="1">
+                        <font>
+                            <Font size="18.0"/>
+                        </font>
+                    </TextField>
+                    <Label text="Altura:" GridPane.rowIndex="1">
+                        <font>
+                            <Font size="20.0"/>
+                        </font>
                         <GridPane.margin>
-                           <Insets left="10.0" />
+                            <Insets left="10.0"/>
                         </GridPane.margin>
-                     </Label>
-                         <Label prefHeight="17.0" prefWidth="57.0" text="Peso:" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                             <font>
-                                 <Font size="22.0" />
-                             </font>
-                     </Label>
-                         <ChoiceBox fx:id="generoSelected" prefHeight="37.0" prefWidth="179.0" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="6" GridPane.rowIndex="2">
-                             <cursor>
-                                 <Cursor fx:constant="HAND" />
-                             </cursor>
-                     </ChoiceBox>
-                     </children>
-                     <opaqueInsets>
-                         <Insets left="2.0" top="5.0" />
-                     </opaqueInsets>
-                 </GridPane>
-                <Label text="Alimentos seleccionados">
-                    <font>
-                        <Font name="System Bold" size="22.0" />
-                    </font>
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-                  <VBox.margin>
-                     <Insets left="10.0" top="10.0" />
-                  </VBox.margin>
-                  <padding>
-                     <Insets bottom="5.0" />
-                  </padding>
-               </Label>
-                 <TabPane fx:id="tab_total_alimentos" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" minWidth="240.0" VBox.vgrow="ALWAYS">
-                     <tabs>
-                         <Tab text="Desayuno">
-                             <content>
-                                 <TableView fx:id="tabla_seleccionado" minWidth="240.0" VBox.vgrow="ALWAYS">
-                                     <columns>
-                                         <TableColumn fx:id="a_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
-                                         <TableColumn fx:id="a_gramos" prefWidth="111.0" text="Gramos" />
-                                         <TableColumn fx:id="a_tipo" prefWidth="111.0" text="Tipo" />
-                                         <TableColumn fx:id="a_cantidad" prefWidth="64.0" text="Cantidad" />
-                                         <TableColumn fx:id="a_unidad" prefWidth="64.0" text="Unidad" />
-                                         <TableColumn fx:id="a_peso_neto" prefWidth="64.0" text="Peso Neto" />
-                                         <TableColumn fx:id="a_calorias" prefWidth="76.0" text="Calorias" />
-                                         <TableColumn fx:id="a_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
-                                         <TableColumn fx:id="a_proteinas" prefWidth="75.0" text="Proteinas" />
-                                         <TableColumn fx:id="a_lipidos" prefWidth="64.0" text="Lipidos" />
-                                     </columns>
-                                     <opaqueInsets>
-                                         <Insets />
-                                     </opaqueInsets>
-                                 </TableView>
-                             </content>
-                         </Tab>
-                         <Tab text="Comida">
-                             <content>
-                                 <TableView fx:id="tabla_comida" minWidth="240.0" VBox.vgrow="ALWAYS">
-                                     <columns>
-                                         <TableColumn fx:id="comida_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
-                                         <TableColumn fx:id="comida_gramos" prefWidth="111.0" text="Gramos" />
-                                         <TableColumn fx:id="comida_tipo" prefWidth="111.0" text="Tipo" />
-                                         <TableColumn fx:id="comida_cantidad" prefWidth="64.0" text="Cantidad" />
-                                         <TableColumn fx:id="comida_unidad" prefWidth="64.0" text="Unidad" />
-                                         <TableColumn fx:id="comida_peso_neto" prefWidth="64.0" text="Peso Neto" />
-                                         <TableColumn fx:id="comida_calorias" prefWidth="76.0" text="Calorias" />
-                                         <TableColumn fx:id="comida_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
-                                         <TableColumn fx:id="comida_proteinas" prefWidth="75.0" text="Proteinas" />
-                                         <TableColumn fx:id="comida_lipidos" prefWidth="64.0" text="Lipidos" />
-                                     </columns>
-                                     <opaqueInsets>
-                                         <Insets />
-                                     </opaqueInsets>
-                                 </TableView>
-                             </content>
-                         </Tab>
-                         <Tab text="Cena">
-                             <TableView fx:id="tabla_cena" minWidth="240.0" VBox.vgrow="ALWAYS">
-                                 <columns>
-                                     <TableColumn fx:id="cena_nombre" prefWidth="122.0" style="font-size: 302px;"
-                                                  text="Alimento"/>
-                                     <TableColumn fx:id="cena_gramos" prefWidth="111.0" text="Gramos"/>
-                                     <TableColumn fx:id="cena_tipo" prefWidth="111.0" text="Tipo"/>
-                                     <TableColumn fx:id="cena_cantidad" prefWidth="64.0" text="Cantidad"/>
-                                     <TableColumn fx:id="cena_unidad" prefWidth="64.0" text="Unidad"/>
-                                     <TableColumn fx:id="cena_peso_neto" prefWidth="64.0" text="Peso Neto"/>
-                                     <TableColumn fx:id="cena_calorias" prefWidth="76.0" text="Calorias"/>
-                                     <TableColumn fx:id="cena_carbohidratos" prefWidth="89.0" text="Carbohidratos"/>
-                                     <TableColumn fx:id="cena_proteinas" prefWidth="75.0" text="Proteinas"/>
-                                     <TableColumn fx:id="cena_lipidos" prefWidth="64.0" text="Lipidos"/>
-                                 </columns>
-                                 <opaqueInsets>
-                                     <Insets/>
-                                 </opaqueInsets>
-                             </TableView>
-                         </Tab>
-                     </tabs>
-                     <VBox.margin>
-                         <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
-                     </VBox.margin>
-                 </TabPane>
+                    </Label>
+                    <Label prefHeight="17.0" prefWidth="57.0" text="Peso:" GridPane.columnIndex="4"
+                           GridPane.rowIndex="1">
+                        <font>
+                            <Font size="22.0"/>
+                        </font>
+                    </Label>
+                    <ChoiceBox fx:id="generoSelected" prefHeight="37.0" prefWidth="179.0"
+                               style="-fx-background-color: white; -fx-background-radius: 10;"
+                               GridPane.columnIndex="6" GridPane.rowIndex="2">
+                        <cursor>
+                            <Cursor fx:constant="HAND"/>
+                        </cursor>
+                    </ChoiceBox>
+                </children>
+                <opaqueInsets>
+                    <Insets left="2.0" top="5.0"/>
+                </opaqueInsets>
+            </GridPane>
+            <Label text="Alimentos seleccionados">
+                <font>
+                    <Font name="System Bold" size="22.0"/>
+                </font>
+                <opaqueInsets>
+                    <Insets/>
+                </opaqueInsets>
+                <VBox.margin>
+                    <Insets left="10.0" top="10.0"/>
+                </VBox.margin>
+                <padding>
+                    <Insets bottom="5.0"/>
+                </padding>
+            </Label>
+            <TabPane fx:id="tab_total_alimentos" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE"
+                     minWidth="240.0" VBox.vgrow="ALWAYS">
+                <tabs>
+                    <Tab text="Desayuno">
+                        <content>
+                            <TableView fx:id="tabla_seleccionado" minWidth="240.0" VBox.vgrow="ALWAYS">
+                                <columns>
+                                    <TableColumn fx:id="a_nombre" prefWidth="122.0" style="font-size: 302px;"
+                                                 text="Alimento">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="nombre"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_gramos" prefWidth="111.0" text="Gramos">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="gramos"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_tipo" prefWidth="111.0" text="Tipo">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="tipo"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_cantidad" prefWidth="64.0" text="Cantidad">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="cantidad"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_unidad" prefWidth="64.0" text="Unidad">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="unidad"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_peso_neto" prefWidth="64.0" text="Peso Neto">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="pesoNeto"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_calorias" prefWidth="76.0" text="Calorias">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="calorias"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_carbohidratos" prefWidth="89.0" text="Carbohidratos">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="carbohidratos"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_proteinas" prefWidth="75.0" text="Proteinas">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="proteinas"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="a_lipidos" prefWidth="64.0" text="Lipidos">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="lipidos"/>
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                                <opaqueInsets>
+                                    <Insets/>
+                                </opaqueInsets>
+                            </TableView>
+                        </content>
+                    </Tab>
+                    <Tab text="Comida">
+                        <TableView fx:id="tabla_comida" minWidth="240.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="comida_nombre" prefWidth="122.0" style="font-size: 302px;"
+                                             text="Alimento">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="nombre"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_gramos" prefWidth="111.0" text="Gramos">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="gramos"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_tipo" prefWidth="111.0" text="Tipo">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="tipo"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_cantidad" prefWidth="64.0" text="Cantidad">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="cantidad"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_unidad" prefWidth="64.0" text="Unidad">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="unidad"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_peso_neto" prefWidth="64.0" text="Peso Neto">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="pesoNeto"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_calorias" prefWidth="76.0" text="Calorias">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="calorias"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_carbohidratos" prefWidth="89.0" text="Carbohidratos">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="carbohidratos"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_proteinas" prefWidth="75.0" text="Proteinas">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="proteinas"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="comida_lipidos" prefWidth="64.0" text="Lipidos">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="lipidos"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                        </TableView>
+                    </Tab>
+                    <Tab text="Cena">
+                        <TableView fx:id="tabla_cena" minWidth="240.0" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="cena_nombre" prefWidth="122.0" style="font-size: 302px;"
+                                             text="Alimento">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="nombre"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_gramos" prefWidth="111.0" text="Gramos">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="gramos"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_tipo" prefWidth="111.0" text="Tipo">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="tipo"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_cantidad" prefWidth="64.0" text="Cantidad">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="cantidad"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_unidad" prefWidth="64.0" text="Unidad">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="unidad"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_peso_neto" prefWidth="64.0" text="Peso Neto">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="pesoNeto"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_calorias" prefWidth="76.0" text="Calorias">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="calorias"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_carbohidratos" prefWidth="89.0" text="Carbohidratos">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="carbohidratos"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_proteinas" prefWidth="75.0" text="Proteinas">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="proteinas"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="cena_lipidos" prefWidth="64.0" text="Lipidos">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="lipidos"/>
+                                    </cellValueFactory>
+                                </TableColumn>
+                            </columns>
+                            <opaqueInsets>
+                                <Insets/>
+                            </opaqueInsets>
+                        </TableView>
+                    </Tab>
+                </tabs>
+                <VBox.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" top="5.0"/>
+                </VBox.margin>
+            </TabPane>
 
-               <GridPane.margin>
-                  <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
-               </GridPane.margin>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" />
-               </effect>
-             </VBox>
+            <GridPane.margin>
+                <Insets bottom="10.0" left="10.0" right="5.0" top="10.0"/>
+            </GridPane.margin>
+            <effect>
+                <DropShadow blurType="ONE_PASS_BOX"/>
+            </effect>
+        </VBox>
 
-         </children>
-      </GridPane>
+    </GridPane>
 
-   </children>
 </AnchorPane>
