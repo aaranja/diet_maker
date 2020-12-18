@@ -160,6 +160,7 @@ public class CrearDieta {
                 new BufferedOutputStream(
                         new FileOutputStream("Ejemplo2.pdf")));
         //Empieza texto
+
         Font f1 = new Font(pdf, CoreFont.HELVETICA);
         Font f2 = new Font(pdf, CoreFont.HELVETICA);
         Font f3 = new Font(pdf, CoreFont.HELVETICA);

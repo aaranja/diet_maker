@@ -21,6 +21,8 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.json.JsonValue;
+
+import java.awt.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.URI;
@@ -150,6 +152,21 @@ public class Controller implements Initializable {
                 }
             }
         });
+    }
+
+    // Direccionar a youtube para ver el video
+    @FXML
+    private void goYoutube(ActionEvent event){
+        try{
+            if(Desktop.isDesktopSupported()){
+                Desktop desktop= Desktop.getDesktop();
+             if(desktop.isSupported(Desktop.Action.BROWSE)){
+                 desktop.browse(new URI("https://www.youtube.com/"));
+             }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void onlyInt(TextField x){
