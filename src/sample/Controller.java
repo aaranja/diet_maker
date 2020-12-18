@@ -11,8 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import sample.buscador.Alimento;
-import sample.lista.AlimentoItem;
-import sample.lista.AlimentoListViewCell;
+import sample.seleccionado.AlimentoItem;
+import sample.user.CrearDieta;
 import sample.user.DataUser;
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -125,25 +125,9 @@ public class Controller implements Initializable {
             usuario.setAltura(estaVacio(alturaInput) ? Float.parseFloat(alturaInput.getText()) : 0);
             usuario.setPeso(estaVacio(pesoInput) ? Float.parseFloat(pesoInput.getText()) : 0 );
             usuario.setGenero(generoSelected.getValue()!=null ? generoSelected.getValue() : null);
+            CrearDieta crearDieta = new CrearDieta(usuario,alimentoObservableList);
+            crearDieta.calcularDieta(false);
 
-            if(usuario.isComplete()){
-                /* Proceder a la calculación !! */
-
-                /*CalcularDieta a = new CalcularDienta(usuario, alimentoObservableList, true);
-
-                class CalcularDieta{
-                    CalcularDieta(DataUser a,ObservableList<AlimentoItem> lista_alimento, boolean pdf_required){
-                        datos = calcula(a, lista_alimento);
-                        if(pdf_required){
-                            crearPdf(datos);
-                        }
-                    }
-                }
-
-                resultado = 21321.3123;*/
-
-
-                /* Datos de salida */
 
             //alert_talla.setText("");
             /*else showAlert("Error", "", "Por favor, introduzca todos los datos requeridos!");*/
