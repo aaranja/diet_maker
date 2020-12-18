@@ -99,6 +99,7 @@ public class Controller implements Initializable {
                 return "error";
             }
         }).orElse("cancel");
+        // cambio
 
         if (s.equals("valid")) return Float.parseFloat(result.get());
         else return null;
