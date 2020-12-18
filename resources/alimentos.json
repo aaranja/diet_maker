@@ -1,239 +1,1644 @@
 {
-  "Frutas": {
-    "Caña": {
-      "calorias": 65,
-      "carbohidratos": 17.24,
-      "proteinas": 0.25,
-      "lipidos": null
-    },
-    "Cereza": {
-      "calorias": 41,
-      "carbohidratos": 9.66,
-      "proteinas": 1.37,
-      "lipidos": 0.0
-    },
-    "Ciruela": {
-      "calorias": 46,
-      "carbohidratos": 11.42,
-      "proteinas": 0.61,
-      "lipidos": 0.0
-    },
-    "Dátiles": {
-      "calorias": 107.00,
-      "carbohidratos": 27.32,
-      "proteinas": 1.66,
-      "lipidos": null
-    },
-    "Durazno": {
-      "calorias": 74,
-      "carbohidratos": 18.94,
-      "proteinas": 1.43,
-      "lipidos": 0.0
-    },
-    "Fresa": {
-      "calorias": 23,
-      "carbohidratos": 5.28,
-      "proteinas": 0.84,
-      "lipidos": 0.0
-    },
-    "Granada roja": {
-      "calorias": 57,
-      "carbohidratos": 12.53,
-      "proteinas": 2.21,
-      "lipidos": 0.0
-    },
-    "Guayaba": {
-      "calorias": 46,
-      "carbohidratos": 15.57,
-      "proteinas": 0.98,
-      "lipidos": 0.0
-    },
-    "Higo": {
-      "calorias": 54,
-      "carbohidratos": 12.24,
-      "proteinas": 1.66,
-      "lipidos": 0.0
-    },
-    "Mandarina": {
-      "calorias": 44,
-      "carbohidratos": 11.24,
-      "proteinas": 1.0,
-      "lipidos": 0.0
-    }
+	"VERDURAS": {
+		"Acelga cruda" : {
+			"cantidad": 2,
+			"unidad": "taza",
+			"peso bruto": 120,
+			"peso neto": 98,
+			"calorias": 22,
+			"proteinas": 2.2,
+			"lipidos": 0.1,
+			"carbohidratos": 4.3
+		},
+		"Acelga picada cocida" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 72,
+			"peso neto": 72,
+			"calorias": 19,
+			"proteinas": 1.9,
+			"lipidos": 0.1,
+			"carbohidratos": 3.9
+		},
+		"Alcachofa mediana cocida" : {
+			"cantidad": 1,
+			"unidad": "pieza",
+			"peso bruto": 120,
+			"peso neto": 48,
+			"calorias": 25,
+			"proteinas": 1.4,
+			"lipidos": 0.2,
+			"carbohidratos": 5.7
+		},
+		"Apio cocido" : {
+			"cantidad": 0.75,
+			"unidad": "taza",
+			"peso bruto": 113,
+			"peso neto": 113,
+			"calorias": 20,
+			"proteinas": 0.9,
+			"lipidos": 0.2,
+			"carbohidratos": 4.5
+		},
+		"Berenjena picada cocida" : {
+			"cantidad": 1,
+			"unidad": "taza",
+			"peso bruto": 99,
+			"peso neto": 99,
+			"calorias": 35,
+			"proteinas": 0.8,
+			"lipidos": 0.2,
+			"carbohidratos": 8.6
+		},
+		"Berro crudo" : {
+			"cantidad": 2,
+			"unidad": "taza",
+			"peso bruto": 68,
+			"peso neto": 56,
+			"calorias": 34,
+			"proteinas": 1.3,
+			"lipidos": 0.1,
+			"carbohidratos": 0.7
+		},
+		"Betabel crudo" : {
+			"cantidad": 0.25,
+			"unidad": "pieza",
+			"peso bruto": 43,
+			"peso neto": 39,
+			"calorias": 19,
+			"proteinas": 0.8,
+			"lipidos": 0.1,
+			"carbohidratos": 4.3
+		},
+		"Betabel crudo rallado" : {
+			"cantidad": 0.25,
+			"unidad": "taza",
+			"peso bruto": 38,
+			"peso neto": 38,
+			"calorias": 18,
+			"proteinas": 0.8,
+			"lipidos": 0.1,
+			"carbohidratos": 4.1
+		},
+		"Bledos crudos" : {
+			"cantidad": 150,
+			"unidad": "g",
+			"peso bruto": 150,
+			"peso neto": 95,
+			"calorias": 27,
+			"proteinas": 2.4,
+			"lipidos": 0.3,
+			"carbohidratos": 3.8
+		},
+		"Brócoli cocido" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 92,
+			"peso neto": 92,
+			"calorias": 26,
+			"proteinas": 2.7,
+			"lipidos": 0.4,
+			"carbohidratos": 4.6
+		},
+		"Brócoli crudo" : {
+			"cantidad": 1,
+			"unidad": "taza",
+			"peso bruto": 88,
+			"peso neto": 71,
+			"calorias": 19,
+			"proteinas": 2.1,
+			"lipidos": 0.3,
+			"carbohidratos": 3.7
+		},
+		"Calabacita alargada cruda" : {
+			"cantidad": 1,
+			"unidad": "pieza",
+			"peso bruto": 111,
+			"peso neto": 91,
+			"calorias": 21,
+			"proteinas": 1.6,
+			"lipidos": 0.1,
+			"carbohidratos": 3.4
+		},
+		"Calabacita redonda cruda" : {
+			"cantidad": 1,
+			"unidad": "pieza",
+			"peso bruto": 100,
+			"peso neto": 79,
+			"calorias": 18,
+			"proteinas": 1.4,
+			"lipidos": 0.1,
+			"carbohidratos": 2.9
+		},
+		"Cebolla blanca rebanada" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 58,
+			"peso neto": 58,
+			"calorias": 23,
+			"proteinas": 0.6,
+			"lipidos": 0.1,
+			"carbohidratos": 5.4
+		},
+		"Cebolla cocida" : {
+			"cantidad": 0.25,
+			"unidad": "taza",
+			"peso bruto": 53,
+			"peso neto": 53,
+			"calorias": 23,
+			"proteinas": 0.7,
+			"lipidos": 0.1,
+			"carbohidratos": 5.3
+		},
+		"Cebolla morada rebanada" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 58,
+			"peso neto": 58,
+			"calorias": 20,
+			"proteinas": 0.5,
+			"lipidos": 0.1,
+			"carbohidratos": 4.4
+		},
+		"Cebollita de cambray sin raiz" : {
+			"cantidad": 3,
+			"unidad": "pieza",
+			"peso bruto": 75,
+			"peso neto": 72,
+			"calorias": 23,
+			"proteinas": 1.3,
+			"lipidos": 0.1,
+			"carbohidratos": 5.3
+		},
+		"Cebollitas en salmuera" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 95,
+			"peso neto": 95,
+			"calorias": 24,
+			"proteinas": 0.9,
+			"lipidos": 0.2,
+			"carbohidratos": 6.7
+		},
+		"Champiñón cocido entero" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 78,
+			"peso neto": 78,
+			"calorias": 20,
+			"proteinas": 2.8,
+			"lipidos": 0.3,
+			"carbohidratos": 3.2
+		},
+		"Champiñón cocido rebanado" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 70,
+			"peso neto": 70,
+			"calorias": 18,
+			"proteinas": 2.5,
+			"lipidos": 0.2,
+			"carbohidratos": 2.8
+		},
+		"Champiñón crudo entero" : {
+			"cantidad": 1,
+			"unidad": "taza",
+			"peso bruto": 96,
+			"peso neto": 93,
+			"calorias": 20,
+			"proteinas": 2.9,
+			"lipidos": 0.3,
+			"carbohidratos": 3.1
+		},
+		"Chayote cocido picado" : {
+			"cantidad": 0.5,
+			"unidad": "taza",
+			"peso bruto": 80,
+			"peso neto": 80,
+			"calorias": 19,
+			"proteinas": 0.5,
+			"lipidos": 0.4,
+			"carbohidratos": 4.1
+		}
   },
-  "Verduras": {
-    "Acelga":20,
-    "Aguacate":42,
-    "Calabacita":16,
-    "Chicharo":144,
-    "Cilantro":24,
-    "Elote":15,
-    "Espinaca":23.50,
-    "Flor de calabaza":16,
-    "Lechuga":16,
-    "Nopal":24
+ "FRUTAS": {
+  	"Albaricoque en almíbar" : {
+	"cantidad": 0.25,
+	"unidad": "taza",
+	"peso bruto": 65,
+	"peso neto": 65,
+	"calorias": 54,
+	"proteinas": 0.4,
+	"lipidos": 0.1,
+	"carbohidratos": 13.8
+	},
+	"Anona" : {
+	"cantidad": 130,
+	"unidad": "g",
+	"peso bruto": 130,
+	"peso neto": 59,
+	"calorias": 59,
+	"proteinas": 1.0,
+	"lipidos": 0.4,
+	"carbohidratos": 14.7
+	},
+
+
+
+
+	"Arándano seco con azúcar" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 5,
+	"peso neto": 5,
+	"calorias": 51,
+	"proteinas": 0.0,
+	"lipidos": 0.3,
+	"carbohidratos": 13.6
+	},
+	"Blueberries" : {
+	"cantidad": 0.75,
+	"unidad": "taza",
+	"peso bruto": 109,
+	"peso neto": 107,
+	"calorias": 61,
+	"proteinas": 0.7,
+	"lipidos": 0.4,
+	"carbohidratos": 15.4
+	},
+	"Calabaza melón" : {
+	"cantidad": 130,
+	"unidad": "g",
+	"peso bruto": 130,
+	"peso neto": 98,
+	"calorias": 58,
+	"proteinas": 2.8,
+	"lipidos": 0.9,
+	"carbohidratos": 11.2
+	},
+	"Caña de azúcar" : {
+	"cantidad": 250,
+	"unidad": "g",
+	"peso bruto": 250,
+	"peso neto": 100,
+	"calorias": 64,
+	"proteinas": 0.5,
+	"lipidos": 0.5,
+	"carbohidratos": 17.2
+	},
+	"Capulín" : {
+	"cantidad": 3,
+	"unidad": "taza",
+	"peso bruto": 480,
+	"peso neto": 96,
+	"calorias": 63,
+	"proteinas": 1.4,
+	"lipidos": 0.0,
+	"carbohidratos": 16.1
+	},
+	"Jugo de toronja natural" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 120,
+	"peso neto": 120,
+	"calorias": 47,
+	"proteinas": 0.6,
+	"lipidos": 0.1,
+	"carbohidratos": 11.0
+	},
+	"Lichis" : {
+	"cantidad": 12,
+	"unidad": "pieza",
+	"peso bruto": 180,
+	"peso neto": 90,
+	"calorias": 59,
+	"proteinas": 0.7,
+	"lipidos": 0.3,
+	"carbohidratos": 14.9
+	},
+	"Lima" : {
+	"cantidad": 3,
+	"unidad": "pieza",
+	"peso bruto": 234,
+	"peso neto": 147,
+	"calorias": 44,
+	"proteinas": 1.0,
+	"lipidos": 0.3,
+	"carbohidratos": 15.5
+	},
+	"Limón real" : {
+	"cantidad": 4,
+	"unidad": "pieza",
+	"peso bruto": 232,
+	"peso neto": 153,
+	"calorias": 31,
+	"proteinas": 1.8,
+	"lipidos": 0.5,
+	"carbohidratos": 16.4
+	},
+	"Mamey" : {
+	"cantidad": 0.33,
+	"unidad": "pieza",
+	"peso bruto": 137,
+	"peso neto": 85,
+	"calorias": 58,
+	"proteinas": 1.4,
+	"lipidos": 0.5,
+	"carbohidratos": 13.7
+	},
+	"Mandarina" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 180,
+	"peso neto": 128,
+	"calorias": 68,
+	"proteinas": 1.0,
+	"lipidos": 0.4,
+	"carbohidratos": 17.0
+	},
+	"Mandarina reyna" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 200,
+	"peso neto": 142,
+	"calorias": 75,
+	"proteinas": 1.2,
+	"lipidos": 0.4,
+	"carbohidratos": 18.9
+	},
+	"Mango ataúlfo" : {
+	"cantidad": 0.5,
+	"unidad": "pieza",
+	"peso bruto": 95,
+	"peso neto": 62,
+	"calorias": 40,
+	"proteinas": 0.3,
+	"lipidos": 0.2,
+	"carbohidratos": 10.5
+	},
+	"Mango en almíbar enlatado" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 61,
+	"peso neto": 61,
+	"calorias": 56,
+	"proteinas": 0.3,
+	"lipidos": 0.1,
+	"carbohidratos": 15.0
+	},
+	"Manzana" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 138,
+	"peso neto": 106,
+	"calorias": 55,
+	"proteinas": 0.3,
+	"lipidos": 0.2,
+	"carbohidratos": 14.7
+	},
+	"Manzana al vapor" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 86,
+	"peso neto": 86,
+	"calorias": 44,
+	"proteinas": 0.2,
+	"lipidos": 0.1,
+	"carbohidratos": 11.7
+	},
+	"Manzana amarilla" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 130,
+	"peso neto": 100,
+	"calorias": 65,
+	"proteinas": 0.3,
+	"lipidos": 0.3,
+	"carbohidratos": 16.5
+	},
+	"Manzana cocida" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 86,
+	"peso neto": 86,
+	"calorias": 44,
+	"proteinas": 0.2,
+	"lipidos": 0.1,
+	"carbohidratos": 11.7
+	},
+	"Manzana deshidratada" : {
+	"cantidad": 9,
+	"unidad": "orejon",
+	"peso bruto": 23,
+	"peso neto": 23,
+	"calorias": 55,
+	"proteinas": 0.2,
+	"lipidos": 0.1,
+	"carbohidratos": 15.0
+	},
+	"Manzana en almíbar" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 24,
+	"peso neto": 24,
+	"calorias": 54,
+	"proteinas": 0.0,
+	"lipidos": 0.0,
+	"carbohidratos": 15.7
+	},
+	"Manzana en almíbar enlatada" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 24,
+	"peso neto": 24,
+	"calorias": 54,
+	"proteinas": 0.0,
+	"lipidos": 0.0,
+	"carbohidratos": 15.7
+	},
+	"Manzana golden" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 130,
+	"peso neto": 100,
+	"calorias": 65,
+	"proteinas": 0.3,
+	"lipidos": 0.3,
+	"carbohidratos": 16.5
+	},
+	"Manzana granny" : {
+	"cantidad": 0.5,
+	"unidad": "pieza",
+	"peso bruto": 93,
+	"peso neto": 71,
+	"calorias": 42,
+	"proteinas": 0.2,
+	"lipidos": 0.3,
+	"carbohidratos": 10.8
+	},
+	"Cereza" : {
+	"cantidad": 20,
+	"unidad": "pieza",
+	"peso bruto": 136,
+	"peso neto": 88,
+	"calorias": 56,
+	"proteinas": 0.9,
+	"lipidos": 0.2,
+	"carbohidratos": 14.7
+	},
+	"Cereza congeladas" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 155,
+	"peso neto": 155,
+	"calorias": 71,
+	"proteinas": 1.4,
+	"lipidos": 0.7,
+	"carbohidratos": 17.1
+	},
+	"Cerezas en almíbar" : {
+	"cantidad": 0.25,
+	"unidad": "taza",
+	"peso bruto": 64,
+	"peso neto": 64,
+	"calorias": 58,
+	"proteinas": 0.5,
+	"lipidos": 0.1,
+	"carbohidratos": 14.9
+	},
+	"Cerezas maschino enlatadas" : {
+	"cantidad": 4,
+	"unidad": "pieza",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 64,
+	"proteinas": 0.0,
+	"lipidos": 0.0,
+	"carbohidratos": 16.8
+	},
+	"Chabacano" : {
+	"cantidad": 4,
+	"unidad": "pieza",
+	"peso bruto": 140,
+	"peso neto": 126,
+	"calorias": 61,
+	"proteinas": 1.8,
+	"lipidos": 0.5,
+	"carbohidratos": 14.0
+	},
+	"Chagua" : {
+	"cantidad": 150,
+	"unidad": "g",
+	"peso bruto": 150,
+	"peso neto": 150,
+	"calorias": 114,
+	"proteinas": 15.8,
+	"lipidos": 1.3,
+	"carbohidratos": 14.0
+	},
+	"Cherimoya picada" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 78,
+	"peso neto": 78,
+	"calorias": 58,
+	"proteinas": 1.3,
+	"lipidos": 0.5,
+	"carbohidratos": 13.8
+	}
   },
-  "Tuberculos": {
-    "Ajo": 129,
-    "Betabel": 42,
-    "Camote": 103,
-    "Cebolla blanca": 38,
-    "Cebolla morada": 32,
-    "Jengibre": 28,
-    "Jicama": 32,
-    "Nabo": 22,
-    "Papa": 70,
-    "Rábano": 11
+  "CEREALES CON Y SIN GRASA": {
+  	"Cereal de salvado de trigo" : {
+	"cantidad": 0.33,
+	"unidad": "taza",
+	"peso bruto": 21,
+	"peso neto": 21,
+	"calorias": 54,
+	"proteinas": 2.6,
+	"lipidos": 0.7,
+	"carbohidratos": 15.3
+	},
+	"Cereal de trigo con canela" : {
+	"cantidad": 0.33,
+	"unidad": "taza",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 58,
+	"proteinas": 0.4,
+	"lipidos": 1.6,
+	"carbohidratos": 10.7
+	},
+	"Cereal de trigo sabor frutas" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 15,
+	"peso neto": 15,
+	"calorias": 60,
+	"proteinas": 0.5,
+	"lipidos": 0.8,
+	"carbohidratos": 13.0
+	},
+	"Cereal integral con pasitas" : {
+	"cantidad": 0.33,
+	"unidad": "taza",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 66,
+	"proteinas": 2.0,
+	"lipidos": 0.5,
+	"carbohidratos": 15.7
+	},
+	"Cereal Multibran Flakes" : {
+	"cantidad": 0.75,
+	"unidad": "taza",
+	"peso bruto": 19,
+	"peso neto": 19,
+	"calorias": 65,
+	"proteinas": 2.4,
+	"lipidos": 1.3,
+	"carbohidratos": 11.1
+	},
+	"Cereal Multibran Pasas" : {
+	"cantidad": 0.75,
+	"unidad": "taza",
+	"peso bruto": 19,
+	"peso neto": 19,
+	"calorias": 66,
+	"proteinas": 2.0,
+	"lipidos": 1.0,
+	"carbohidratos": 12.1
+	},
+	"Cereal multigrano" : {
+	"cantidad": 0.25,
+	"unidad": "taza",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 67,
+	"proteinas": 2.3,
+	"lipidos": 0.5,
+	"carbohidratos": 14.7
+	},
+	"Cereal sin azúcar" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 14,
+	"peso neto": 14,
+	"calorias": 51,
+	"proteinas": 1.2,
+	"lipidos": 0.1,
+	"carbohidratos": 12.0
+	},
+	"Codito crudo" : {
+	"cantidad": 20,
+	"unidad": "g",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 74,
+	"proteinas": 2.5,
+	"lipidos": 0.2,
+	"carbohidratos": 15.0
+	},
+	"Couscous" : {
+	"cantidad": 0.33,
+	"unidad": "taza",
+	"peso bruto": 52,
+	"peso neto": 52,
+	"calorias": 58,
+	"proteinas": 2.0,
+	"lipidos": 0.1,
+	"carbohidratos": 12.0
+	},
+	"Crepas" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 69,
+	"proteinas": 1.6,
+	"lipidos": 1.0,
+	"carbohidratos": 13.1
+	},
+	"Crepas para rellenar" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 69,
+	"proteinas": 2.3,
+	"lipidos": 1.4,
+	"carbohidratos": 11.6
+	},
+	"Crepas saladas" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 69,
+	"proteinas": 1.6,
+	"lipidos": 1.0,
+	"carbohidratos": 13.1
+	},
+	"Croutones" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 15,
+	"peso neto": 15,
+	"calorias": 61,
+	"proteinas": 1.8,
+	"lipidos": 1.0,
+	"carbohidratos": 11.1
+	},
+	"Cuadritos de avena" : {
+	"cantidad": 0.33,
+	"unidad": "taza",
+	"peso bruto": 19,
+	"peso neto": 19,
+	"calorias": 71,
+	"proteinas": 2.9,
+	"lipidos": 1.0,
+	"carbohidratos": 13.8
+	},
+	"Brownie casero" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 24,
+	"peso neto": 24,
+	"calorias": 112,
+	"proteinas": 1.5,
+	"lipidos": 7.0,
+	"carbohidratos": 12.0
+	},
+	"Brownie comercial" : {
+	"cantidad": 0.5,
+	"unidad": "pieza",
+	"peso bruto": 28,
+	"peso neto": 28,
+	"calorias": 114,
+	"proteinas": 1.4,
+	"lipidos": 4.6,
+	"carbohidratos": 17.9
+	},
+	"Charritos de amaranto" : {
+	"cantidad": 0.5,
+	"unidad": "bolsa",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 101,
+	"proteinas": 1.5,
+	"lipidos": 5.8,
+	"carbohidratos": 10.1
+	},
+	"Cheescake" : {
+	"cantidad": 1,
+	"unidad": "rebanada",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 96,
+	"proteinas": 1.7,
+	"lipidos": 6.8,
+	"carbohidratos": 7.7
+	},
+	"Cheetos" : {
+	"cantidad": 20,
+	"unidad": "g",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 11,
+	"proteinas": 0,
+	"lipidos": 0.8,
+	"carbohidratos": 7.2
+	},
+	"Cheetos Poffs" : {
+	"cantidad": 20,
+	"unidad": "g",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 106,
+	"proteinas": 1.6,
+	"lipidos": 6.4,
+	"carbohidratos": 10.4
+	},
+	"Cheetos Torciditos" : {
+	"cantidad": 20,
+	"unidad": "g",
+	"peso bruto": 20,
+	"peso neto": 20,
+	"calorias": 108,
+	"proteinas": 1.0,
+	"lipidos": 7.0,
+	"carbohidratos": 10.2
+	},
+	"Chicharrón de harina enchilado" : {
+	"cantidad": 0.5,
+	"unidad": "bolsa",
+	"peso bruto": 23,
+	"peso neto": 23,
+	"calorias": 106,
+	"proteinas": 2.1,
+	"lipidos": 5.6,
+	"carbohidratos": 12.5
+	},
+	"Chips ahoy" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 19,
+	"peso neto": 19,
+	"calorias": 91,
+	"proteinas": 1.0,
+	"lipidos": 4.0,
+	"carbohidratos": 12.6
+	}
   },
 
-  "Leguminosas y derivados":{
-    "Cacahuate dorado":{
-      "calorias": 545.20,
-      "carbohidratos": 48,
-      "proteinas": 12.70,
-      "lipidos": null
-    },
-    "Frijol amarillo":{
-      "calorias": 336,
-      "carbohidratos": 67.09,
-      "proteinas": 14.20,
-      "lipidos": 0.0
-    },
-    "Frijol bayo desidratado":{
-      "calorias": 397.39,
-      "carbohidratos": 60.87,
-      "proteinas": 19.63,
-      "lipidos": 0.0
-    },
-    "Frijol cocido (entero)":{
-      "calorias": 75.50,
-      "carbohidratos": 12.89,
-      "proteinas": 5.90,
-      "lipidos": null
-    },
-    "Frijol enlatado":{
-      "calorias": 87.40,
-      "carbohidratos": 14.80,
-      "proteinas": 4.80,
-      "lipidos": 0.0
-    },
-    "Frijol Mexicano":{
-      "calorias": 341,
-      "carbohidratos": 62.91,
-      "proteinas": 20.20,
-      "lipidos": null
-    },
-    "Frijol molido":{
-      "calorias": 320,
-      "carbohidratos": 60.00,
-      "proteinas": 17.90,
-      "lipidos": null
-    },
-    "Frijol negro":{
-      "calorias": 328,
-      "carbohidratos": 55.88,
-      "proteinas": 20.84,
-      "lipidos": 0.0
-    },
-    "Garbanzo cocido":{
-      "calorias": 118.00,
-      "carbohidratos": 21.10,
-      "proteinas": 8.34,
-      "lipidos": null
-    },
-    "Haba seca":{
-      "calorias": 341,
-      "carbohidratos": 58.29,
-      "proteinas": 22.60,
-      "lipidos": null
-    }
+  "LEGUMINOSAS": {
+  	"Alubia cocida" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 90,
+	"peso neto": 90,
+	"calorias": 124,
+	"proteinas": 8.7,
+	"lipidos": 0.3,
+	"carbohidratos": 22.5
+	},
+	"Alubia cruda" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 117,
+	"proteinas": 8.1,
+	"lipidos": 0.3,
+	"carbohidratos": 21.1
+	},
+	"Alubia enlatada guisada" : {
+	"cantidad": 113,
+	"unidad": "taza",
+	"peso bruto": 86,
+	"peso neto": 86,
+	"calorias": 99,
+	"proteinas": 6.3,
+	"lipidos": 0.3,
+	"carbohidratos": 183
+	},
+	"Alubia germinada" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 190,
+	"peso neto": 190,
+	"calorias": 63,
+	"proteinas": 9.1,
+	"lipidos": 1.1,
+	"carbohidratos": 8.9
+	},
+	"Alverjon seco cocido" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 98,
+	"peso neto": 98,
+	"calorias": 116,
+	"proteinas": 8.2,
+	"lipidos": 0.4,
+	"carbohidratos": 20.7
+	},
+	"Chicharo germinado cocido" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 103,
+	"peso neto": 103,
+	"calorias": 100,
+	"proteinas": 7.2,
+	"lipidos": 0.5,
+	"carbohidratos": 17.5
+	},
+	"Frijol germinado cocido" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 124,
+	"peso neto": 124,
+	"calorias": 97,
+	"proteinas": 8.8,
+	"lipidos": 1.0,
+	"carbohidratos": 18.6
+	},
+	"Frijol molido" : {
+	"cantidad": 0.33,
+	"unidad": "taza",
+	"peso bruto": 73,
+	"peso neto": 73,
+	"calorias": 96,
+	"proteinas": 6.4,
+	"lipidos": 0.4,
+	"carbohidratos": 17.2
+	},
+	"Frijol promedio cocido" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 86,
+	"peso neto": 86,
+	"calorias": 114,
+	"proteinas": 7.6,
+	"lipidos": 0.5,
+	"carbohidratos": 20.4
+	},
+	"Frijol promedio crudo" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 119,
+	"proteinas": 7.6,
+	"lipidos": 0.5,
+	"carbohidratos": 21.8
+	},
+	"Frijoles enteros enlatados" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 128,
+	"peso neto": 128,
+	"calorias": 108,
+	"proteinas": 6.7,
+	"lipidos": 0.8,
+	"carbohidratos": 18.6
+	},
+	"Harina de lenteja" : {
+	"cantidad": 3,
+	"unidad": "cucharada",
+	"peso bruto": 33,
+	"peso neto": 33,
+	"calorias": 108,
+	"proteinas": 8.1,
+	"lipidos": 0.5,
+	"carbohidratos": 18.5
+	},
+	"Harina de soya" : {
+	"cantidad": 4,
+	"unidad": "cucharada",
+	"peso bruto": 25,
+	"peso neto": 25,
+	"calorias": 108,
+	"proteinas": 9.3,
+	"lipidos": 5.1,
+	"carbohidratos": 7.8
+	},
+	"Harina de soya baja en grasa" : {
+	"cantidad": 4,
+	"unidad": "cucharada",
+	"peso bruto": 25,
+	"peso neto": 25,
+	"calorias": 91,
+	"proteinas": 12.2,
+	"lipidos": 2.2,
+	"carbohidratos": 7.5
+	},
+	"Marina de soya sin grasa" : {
+	"cantidad": 4,
+	"unidad": "cucharada",
+	"peso bruto": 22,
+	"peso neto": 22,
+	"calorias": 81,
+	"proteinas": 11.2,
+	"lipidos": 1.5,
+	"carbohidratos": 7.9
+	},
+	"Hummus" : {
+	"cantidad": 5,
+	"unidad": "cucharada",
+	"peso bruto": 75,
+	"peso neto": 75,
+	"calorias": 125,
+	"proteinas": 5.9,
+	"lipidos": 7.2,
+	"carbohidratos": 10.7
+	},
+	"Lenteja cocida" : {
+	"cantidad": 0.5,
+	"unidad": "taza",
+	"peso bruto": 99,
+	"peso neto": 99,
+	"calorias": 115,
+	"proteinas": 9.0,
+	"lipidos": 0.4,
+	"carbohidratos": 20.0
+	},
+	"Lenteja cruda" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 124,
+	"proteinas": 9.0,
+	"lipidos": 0.4,
+	"carbohidratos": 21.0
+	},
+	"Soya cocida" : {
+	"cantidad": 0.33,
+	"unidad": "tan",
+	"peso bruto": 57,
+	"peso neto": 57,
+	"calorias": 98,
+	"proteinas": 9.4,
+	"lipidos": 5.1,
+	"carbohidratos": 5.6
+	},
+	"Soya texturizada" : {
+	"cantidad": 30,
+	"unidad": "g",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 95,
+	"proteinas": 11.6,
+	"lipidos": 0.9,
+	"carbohidratos": 11.7
+	}
   },
 
-  "Varios": {
-    "Taco de suadero": 269,
-    "Cerveza": 303,
-    "Malteada": 392,
-    "Mole de olla": 51,
-    "Menudo": 66.54,
-    "Chiles en nogada": 238,
-    "Barbacoa de borrego": 243,
-    "Barra granola": 424,
-    "Flauta pollo": 272,
-    "Paella normal": 191.20
+  "ALIMENTOS DE ORIGEN ANIMAL": {
+  	"Merluza" : {
+	"cantidad": 85,
+	"unidad": "g",
+	"peso bruto": 85,
+	"peso neto": 43,
+	"calorias": 33,
+	"proteinas": 7.2,
+	"lipidos": 0.4,
+	"carbohidratos": 0.0
+	},
+	"Merluza fileteada" : {
+	"cantidad": 45,
+	"unidad": "g",
+	"peso bruto": 45,
+	"peso neto": 45,
+	"calorias": 34,
+	"proteinas": 7.5,
+	"lipidos": 0.5,
+	"carbohidratos": 0.0
+	},
+	"Mero cocido" : {
+	"cantidad": 30,
+	"unidad": "g",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 35,
+	"proteinas": 7.5,
+	"lipidos": 0.4,
+	"carbohidratos": 0.0
+	},
+	"Mero crudo" : {
+	"cantidad": 80,
+	"unidad": "g",
+	"peso bruto": 80,
+	"peso neto": 41,
+	"calorias": 34,
+	"proteinas": 7.9,
+	"lipidos": 0.3,
+	"carbohidratos": 0.0
+	},
+	"Mero crudo fileteado" : {
+	"cantidad": 40,
+	"unidad": "g",
+	"peso bruto": 40,
+	"peso neto": 40,
+	"calorias": 34,
+	"proteinas": 7.7,
+	"lipidos": 0.3,
+	"carbohidratos": 0.0
+	},
+	"Milanesa de avestruz" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 31,
+	"proteinas": 7.1,
+	"lipidos": 0.4,
+	"carbohidratos": 0.0
+	},
+	"Milanesa de pollo" : {
+	"cantidad": 30,
+	"unidad": "g",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 34,
+	"proteinas": 7.0,
+	"lipidos": 0.5,
+	"carbohidratos": 0.0
+	},
+	"Milanesa de res" : {
+	"cantidad": 30,
+	"unidad": "g",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 36,
+	"proteinas": 7.2,
+	"lipidos": 0.8,
+	"carbohidratos": 0.0
+	},
+	"Mojarra cruda fileteada" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 34,
+	"proteinas": 7.0,
+	"lipidos": 0.6,
+	"carbohidratos": 0.0
+	},
+	"Mojarra tilapia cruda" : {
+	"cantidad": 0.33,
+	"unidad": "pieza",
+	"peso bruto": 73,
+	"peso neto": 37,
+	"calorias": 35,
+	"proteinas": 7.4,
+	"lipidos": 0.6,
+	"carbohidratos": 0.0
+	},
+	"Molida de pollo" : {
+	"cantidad": 30,
+	"unidad": "g",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 34,
+	"proteinas": 7.0,
+	"lipidos": 0.5,
+	"carbohidratos": 0.0
+	},
+	"Molleja de pollo cocida" : {
+	"cantidad": 25,
+	"unidad": "g",
+	"peso bruto": 25,
+	"peso neto": 25,
+	"calorias": 37,
+	"proteinas": 7.6,
+	"lipidos": 0.7,
+	"carbohidratos": 0.0
+	},
+	"Pancita de res" : {
+	"cantidad": 45,
+	"unidad": "g",
+	"peso bruto": 45,
+	"peso neto": 43,
+	"calorias": 40,
+	"proteinas": 6.2,
+	"lipidos": 1.7,
+	"carbohidratos": 0.0
+	},
+	"Pargo" : {
+	"cantidad": 70,
+	"unidad": "g",
+	"peso bruto": 70,
+	"peso neto": 36,
+	"calorias": 37,
+	"proteinas": 7.5,
+	"lipidos": 0.7,
+	"carbohidratos": 0.0
+	},
+	"Pargo fileteado" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 36,
+	"proteinas": 7.4,
+	"lipidos": 0.7,
+	"carbohidratos": 0.0
+	},
+	"Pata de res" : {
+	"cantidad": 120,
+	"unidad": "g",
+	"peso bruto": 120,
+	"peso neto": 55,
+	"calorias": 44,
+	"proteinas": 6.7,
+	"lipidos": 1.6,
+	"carbohidratos": 0.6
+	},
+	"Molida de res" : {
+	"cantidad": 30,
+	"unidad": "g",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 54,
+	"proteinas": 6.2,
+	"lipidos": 3.0,
+	"carbohidratos": 0.0
+	},
+	"Molida de sirloin" : {
+	"cantidad": 25,
+	"unidad": "g",
+	"peso bruto": 25,
+	"peso neto": 25,
+	"calorias": 51,
+	"proteinas": 7.6,
+	"lipidos": 2.0,
+	"carbohidratos": 0.0
+	},
+	"Ostión cocido" : {
+	"cantidad": 35,
+	"unidad": "g",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 57,
+	"proteinas": 6.6,
+	"lipidos": 1.6,
+	"carbohidratos": 3.5
+	},
+	"Pavo" : {
+	"cantidad": 45,
+	"unidad": "g",
+	"peso bruto": 45,
+	"peso neto": 36,
+	"calorias": 57,
+	"proteinas": 7.3,
+	"lipidos": 2.8,
+	"carbohidratos": 0.0
+	}
   },
-  "Origen animal": {
-    "Tripas": {
-      "calorias": 85.0,
-      "carbohidratos": 0.0,
-      "proteinas": 11.30,
-      "lipidos": 122.0
-    },
-    "Rosbeef": {
-      "calorias": 223,
-      "carbohidratos": 3.73,
-      "proteinas": 15.27,
-      "lipidos": 70
-    },
-    "Pierna ": {
-      "calorias": 219.0,
-      "carbohidratos": 0.0,
-      "proteinas": 29.10,
-      "lipidos": 87.0
-    },
-    "Carne ": {
-      "calorias": 143.00,
-      "carbohidratos": 0,
-      "proteinas": 23.90,
-      "lipidos": 69.0
-    },
-    "Chicharron": {
-      "calorias": 530,
-      "carbohidratos": 0,
-      "proteinas": 58.45,
-      "lipidos": 74
-    },
-    "Jamón horneado": {
-      "calorias": 95,
-      "carbohidratos": 1.70,
-      "proteinas": 13.83,
-      "lipidos": 59
-    },
-    "Peperoni": {
-      "calorias": 494,
-      "carbohidratos": 2.57,
-      "proteinas": 17.29,
-      "lipidos": 7.28
-    },
-    "Salami Italiano": {
-      "calorias": 407,
-      "carbohidratos": 7.73,
-      "proteinas": 21.04,
-      "lipidos": 5.08
-    },
-    "Salchicha enlatada": {
-      "calorias": 99,
-      "carbohidratos": 2.40,
-      "proteinas": 13.30,
-      "lipidos": null
-    },
-    "Salchicha para asar": {
-      "calorias": 447,
-      "carbohidratos": 21.70,
-      "proteinas": 16.20,
-      "lipidos": null
-    }
 
+  "LECHE": {
+  	"Leche Alpura Light Extra" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 240,
+	"peso neto": 240,
+	"calorias": 103,
+	"proteinas": 8.0,
+	"lipidos": 2.4,
+	"carbohidratos": 14.0
+	},
+	"Leche de soya" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 240,
+	"peso neto": 240,
+	"calorias": 79,
+	"proteinas": 6.6,
+	"lipidos": 4.6,
+	"carbohidratos": 4.3
+	},
+	"Leche descremada" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 245,
+	"peso neto": 245,
+	"calorias": 86,
+	"proteinas": 8.4,
+	"lipidos": 0.4,
+	"carbohidratos": 11.9
+	},
+	"Danonino" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 90,
+	"peso neto": 90,
+	"calorias": 106,
+	"proteinas": 6.0,
+	"lipidos": 2.8,
+	"carbohidratos": 14.0
+	},
+	"Leche fácil digestión" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 240,
+	"peso neto": 240,
+	"calorias": 109,
+	"proteinas": 7.5,
+	"lipidos": 3.9,
+	"carbohidratos": 11.2
+	},
+	"Leche Lactium MX" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 240,
+	"peso neto": 240,
+	"calorias": 109,
+	"proteinas": 7.2,
+	"lipidos": 4.0,
+	"carbohidratos": 11
+	},
+	"Leche Lala Semidescremada" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 240,
+	"peso neto": 240,
+	"calorias": 109,
+	"proteinas": 7.5,
+	"lipidos": 3.8,
+	"carbohidratos": 11.1
+	},
+	"Leche semidescremada" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 233,
+	"peso neto": 233,
+	"calorias": 116,
+	"proteinas": 7.7,
+	"lipidos": 4.4,
+	"carbohidratos": 11.2
+	},
+	"PLF con Lactobacillus casei Shirota" : {
+	"cantidad": 3,
+	"unidad": "envase",
+	"peso bruto": 240,
+	"peso neto": 240,
+	"calorias": 165,
+	"proteinas": 3.0,
+	"lipidos": 0.1,
+	"carbohidratos": 38.1
+	},
+	"Yoghur Activia de Ciruela Pasa" : {
+	"cantidad": 3.66,
+	"unidad": "vasito",
+	"peso bruto": 200,
+	"peso neto": 200,
+	"calorias": 206,
+	"proteinas": 6.2,
+	"lipidos": 6.4,
+	"carbohidratos": 30.9
+	},
+	"Yoghur bebible sabor durazno" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 330,
+	"peso neto": 330,
+	"calorias": 224,
+	"proteinas": 7.9,
+	"lipidos": 2.3,
+	"carbohidratos": 40.9
+	},
+	"Yoghur bebible sabor fresa" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 330,
+	"peso neto": 330,
+	"calorias": 224,
+	"proteinas": 7.9,
+	"lipidos": 2.3,
+	"carbohidratos": 40.9
+	},
+	"Yoghur bebible sabor piña colada" : {
+	"cantidad": 2,
+	"unidad": "pieza",
+	"peso bruto": 330,
+	"peso neto": 330,
+	"calorias": 224,
+	"proteinas": 7.9,
+	"lipidos": 2.3,
+	"carbohidratos": 40.9
+	},
+	"Yoghur de café" : {
+	"cantidad": 0.75,
+	"unidad": "taza",
+	"peso bruto": 180,
+	"peso neto": 180,
+	"calorias": 180,
+	"proteinas": 8.5,
+	"lipidos": 2.1,
+	"carbohidratos": 32.8
+	},
+	"Yoghur de fruta" : {
+	"cantidad": 0.75,
+	"unidad": "taza",
+	"peso bruto": 180,
+	"peso neto": 180,
+	"calorias": 201,
+	"proteinas": 8.5,
+	"lipidos": 3.2,
+	"carbohidratos": 33.9
+	},
+	"Yoghur de vainilla" : {
+	"cantidad": 0.75,
+	"unidad": "taza",
+	"peso bruto": 180,
+	"peso neto": 180,
+	"calorias": 201,
+	"proteinas": 8.5,
+	"lipidos": 3.2,
+	"carbohidratos": 33.9
+	},
+	"Yoghur Lala bebible frutas" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 250,
+	"peso neto": 250,
+	"calorias": 195,
+	"proteinas": 5.5,
+	"lipidos": 4.0,
+	"carbohidratos": 20.0
+	},
+	"Yoghur Lala Vive Deslactosado" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 250,
+	"peso neto": 250,
+	"calorias": 195,
+	"proteinas": 5.5,
+	"lipidos": 4.0,
+	"carbohidratos": 34.5
+	},
+	"Yoghur Lala Vive sin colesterol con Menoscol" : {
+	"cantidad": 1,
+	"unidad": "pieza",
+	"peso bruto": 250,
+	"peso neto": 250,
+	"calorias": 185,
+	"proteinas": 6.8,
+	"lipidos": 1.0,
+	"carbohidratos": 37.3
+	},
+	"Yogur de soya" : {
+	"cantidad": 1,
+	"unidad": "taza",
+	"peso bruto": 180,
+	"peso neto": 180,
+	"calorias": 169,
+	"proteinas": 63,
+	"lipidos": 3.2,
+	"carbohidratos": 28.7
+	}
   },
-  "Pescados":{
-    "Atún en aceite":174.0,
-    "Atún en agua":	84,
-    "Bagre crudo":	119,
-    "Cabrilla cruda":87,
-    "Camarón al natural":71,
-    "Camarón cocido sin cáscara":110.0,
-    "Cangrejo crudo":72,
-    "Carpa asada":116,
-    "Cazón crudo":106,
-    "Charal crudo":88
+  "ACEITES Y GRASAS CON Y SIN PROTEINA": {
+  	"Crema para café" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 14,
+	"peso neto": 14,
+	"calorias": 41,
+	"proteinas": 0.3,
+	"lipidos": 4.3,
+	"carbohidratos": 0.4
+	},
+	"Dip" : {
+	"cantidad": 2,
+	"unidad": "cucharada",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 48,
+	"proteinas": 1.0,
+	"lipidos": 3.9,
+	"carbohidratos": 1.9
+	},
+	"Dip de cebolla" : {
+	"cantidad": 2,
+	"unidad": "cucharada",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 48,
+	"proteinas": 1.0,
+	"lipidos": 3.9,
+	"carbohidratos": 1.9
+	},
+	"Dip preparado" : {
+	"cantidad": 2,
+	"unidad": "cucharada",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 48,
+	"proteinas": 1.0,
+	"lipidos": 3.9,
+	"carbohidratos": 1.9
+	},
+	"Dip preparado con crema" : {
+	"cantidad": 2,
+	"unidad": "cucharada",
+	"peso bruto": 30,
+	"peso neto": 30,
+	"calorias": 48,
+	"proteinas": 1.0,
+	"lipidos": 3.9,
+	"carbohidratos": 1.9
+	},
+	"Grasa de tocino" : {
+	"cantidad": 5,
+	"unidad": "g",
+	"peso bruto": 5,
+	"peso neto": 5,
+	"calorias": 44,
+	"proteinas": 0.0,
+	"lipidos": 5.0,
+	"carbohidratos": 0.0
+	},
+	"Grasas animales" : {
+	"cantidad": 5,
+	"unidad": "g",
+	"peso bruto": 5,
+	"peso neto": 5,
+	"calorias": 44,
+	"proteinas": 0.0,
+	"lipidos": 5.0,
+	"carbohidratos": 0.0
+	},
+	"Lardo" : {
+	"cantidad": 5,
+	"unidad": "g",
+	"peso bruto": 5,
+	"peso neto": 5,
+	"calorias": 45,
+	"proteinas": 0.0,
+	"lipidos": 5.0,
+	"carbohidratos": 0.0
+	},
+	"Manteca de cerdo" : {
+	"cantidad": 1,
+	"unidad": "cucharadita",
+	"peso bruto": 4,
+	"peso neto": 4,
+	"calorias": 39,
+	"proteinas": 0.0,
+	"lipidos": 4.3,
+	"carbohidratos": 0.0
+	},
+	"Manteca vegetal" : {
+	"cantidad": 1,
+	"unidad": "cucharadita",
+	"peso bruto": 4,
+	"peso neto": 4,
+	"calorias": 38,
+	"proteinas": 0.0,
+	"lipidos": 4.3,
+	"carbohidratos": 0.0
+	},
+	"Pasta de cacahuate desgrasada" : {
+	"cantidad": 7,
+	"unidad": "cucharadita",
+	"peso bruto": 18,
+	"peso neto": 18,
+	"calorias": 76,
+	"proteinas": 5.3,
+	"lipidos": 4.4,
+	"carbohidratos": 4.9
+	},
+	"Pate" : {
+	"cantidad": 5,
+	"unidad": "cucharadita",
+	"peso bruto": 22,
+	"peso neto": 22,
+	"calorias": 69,
+	"proteinas": 3.1,
+	"lipidos": 6.1,
+	"carbohidratos": 0.3
+	},
+	"Pate de cerdo" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 151,
+	"proteinas": 1.5,
+	"lipidos": 5.8,
+	"carbohidratos": 0.6
+	},
+	"Pate de Foie Gras" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 60,
+	"proteinas": 1.5,
+	"lipidos": 5.7,
+	"carbohidratos": 0.6
+	},
+	"Pate de hígado de cerdo" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 61,
+	"proteinas": 1.5,
+	"lipidos": 5.8,
+	"carbohidratos": 0.6
+	},
+	"Pate de hígado de ternera" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 61,
+	"proteinas": 1.5,
+	"lipidos": 5.8,
+	"carbohidratos": 0.6
+	},
+	"Pate de polio" : {
+	"cantidad": 8,
+	"unidad": "cucharadita",
+	"peso bruto": 35,
+	"peso neto": 35,
+	"calorias": 71,
+	"proteinas": 4.7,
+	"lipidos": 4.6,
+	"carbohidratos": 2.4
+	},
+	"Pate de ternera" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 61,
+	"proteinas": 1.5,
+	"lipidos": 5.8,
+	"carbohidratos": 0.6
+	},
+	"Pepitas" : {
+	"cantidad": 60,
+	"unidad": "pieza",
+	"peso bruto": 12,
+	"peso neto": 12,
+	"calorias": 66,
+	"proteinas": 3.0,
+	"lipidos": 5.6,
+	"carbohidratos": 2.1
+	},
+	"Pepitas con cascara" : {
+	"cantidad": 2,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 70,
+	"proteinas": 3.5,
+	"lipidos": 5.6,
+	"carbohidratos": 1.3
+	},
+	"Pepitas de calabaza" : {
+	"cantidad": 5.5,
+	"unidad": "cucharada",
+	"peso bruto": 12,
+	"peso neto": 12,
+	"calorias": 66,
+	"proteinas": 3.6,
+	"lipidos": 5.5,
+	"carbohidratos": 1.7
+	},
+	"Pepitas de melón" : {
+	"cantidad": 5,
+	"unidad": "cucharadita",
+	"peso bruto": 12,
+	"peso neto": 12,
+	"calorias": 66,
+	"proteinas": 3.3,
+	"lipidos": 5.6,
+	"carbohidratos": 1.8
+	},
+	"Pepitas tostadas" : {
+	"cantidad": 1,
+	"unidad": "cucharada",
+	"peso bruto": 13,
+	"peso neto": 13,
+	"calorias": 69,
+	"proteinas": 4.3,
+	"lipidos": 5.5,
+	"carbohidratos": 1.8
+	},
+	"Pepperoni" : {
+	"cantidad": 4,
+	"unidad": "rebanada",
+	"peso bruto": 15,
+	"peso neto": 15,
+	"calorias": 72,
+	"proteinas": 2.8,
+	"lipidos": 6.7,
+	"carbohidratos": 0.1
+	}
   }
 }
+

@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../../../javaFX/javafx-sdk-11.0.2/lib" />
       <root url="jar://$PROJECT_DIR$/../../../../../Javalib/antlr-4.8-complete.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../javaPDF/pdfjet/PDFjet.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

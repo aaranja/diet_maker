@@ -1,5 +1,7 @@
 package sample.seleccionado;
 
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleStringProperty;
 import sample.buscador.Alimento;
 /* Dato que se almacena en la lista de alimentos seleccionandos
 *  Recibe un dato Alimento y un String gramos.
@@ -8,9 +10,9 @@ import sample.buscador.Alimento;
 * */
 public class AlimentoItem {
     private Alimento alimento;
-    private String gramos;
+    private Float gramos;
 
-    public AlimentoItem(Alimento alimento, String gramos){
+    public AlimentoItem(Alimento alimento, Float gramos){
         this.alimento = alimento;
         this.gramos = gramos;
     }
@@ -29,9 +31,11 @@ public class AlimentoItem {
 
     public Float getLipidos(){ return alimento.getLipidos(); }
 
-    public String getGramos(){ return gramos; }
+    public Float getGramos(){ return this.gramos; }
 
-    public void setGramos(String nuevogramos) { this.gramos = nuevogramos; }
+    public Float getFloatGramos(){ return this.gramos; }
+
+    public void setGramos(Float nuevogramos) { this.gramos = nuevogramos; }
 
     public String toString(){ return alimento.getNombre(); }
 

@@ -64,6 +64,9 @@
                     <columns>
                         <TableColumn fx:id="c_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
                         <TableColumn fx:id="c_tipo" prefWidth="111.0" text="Tipo" />
+                        <TableColumn fx:id="c_cantidad" prefWidth="64.0" text="Cantidad" />
+                        <TableColumn fx:id="c_unidad" prefWidth="64.0" text="Unidad" />
+                        <TableColumn fx:id="c_peso_neto" prefWidth="64.0" text="Peso Neto" />
                         <TableColumn fx:id="c_calorias" prefWidth="76.0" text="Calorias" />
                         <TableColumn fx:id="c_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
                         <TableColumn fx:id="c_proteinas" prefWidth="75.0" text="Proteinas" />
@@ -191,16 +194,17 @@
                                  <Font size="18.0" />
                              </font>
                      </TextField>
-                         <TextField fx:id="edadInput" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                             <font>
-                                 <Font size="18.0" />
-                             </font>
-                     </TextField>
+
                          <TextField fx:id="alturaInput" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="1">
                              <font>
                                  <Font size="18.0" />
                              </font>
                      </TextField>
+                         <TextField fx:id="edadInput" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                             <font>
+                                 <Font size="18.0" />
+                             </font>
+                         </TextField>
                          <TextField fx:id="pesoInput" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="6" GridPane.rowIndex="1">
                              <font>
                                  <Font size="18.0" />
@@ -243,24 +247,76 @@
                      <Insets bottom="5.0" />
                   </padding>
                </Label>
-               <TableView fx:id="tabla_seleccionado" minWidth="240.0" VBox.vgrow="ALWAYS">
-                 <columns>
-                     <TableColumn fx:id="a_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
-                     <TableColumn fx:id="a_gramos" prefWidth="111.0" text="Gramos" />
-                     <TableColumn fx:id="a_tipo" prefWidth="111.0" text="Tipo" />
-                     <TableColumn fx:id="a_calorias" prefWidth="76.0" text="Calorias" />
-                     <TableColumn fx:id="a_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
-                     <TableColumn fx:id="a_proteinas" prefWidth="75.0" text="Proteinas" />
-                     <TableColumn fx:id="a_lipidos" prefWidth="64.0" text="Lipidos" />
+                 <TabPane fx:id="tab_total_alimentos" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" minWidth="240.0" VBox.vgrow="ALWAYS">
+                     <tabs>
+                         <Tab text="Desayuno">
+                             <content>
+                                 <TableView fx:id="tabla_seleccionado" minWidth="240.0" VBox.vgrow="ALWAYS">
+                                     <columns>
+                                         <TableColumn fx:id="a_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
+                                         <TableColumn fx:id="a_gramos" prefWidth="111.0" text="Gramos" />
+                                         <TableColumn fx:id="a_tipo" prefWidth="111.0" text="Tipo" />
+                                         <TableColumn fx:id="a_cantidad" prefWidth="64.0" text="Cantidad" />
+                                         <TableColumn fx:id="a_unidad" prefWidth="64.0" text="Unidad" />
+                                         <TableColumn fx:id="a_peso_neto" prefWidth="64.0" text="Peso Neto" />
+                                         <TableColumn fx:id="a_calorias" prefWidth="76.0" text="Calorias" />
+                                         <TableColumn fx:id="a_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
+                                         <TableColumn fx:id="a_proteinas" prefWidth="75.0" text="Proteinas" />
+                                         <TableColumn fx:id="a_lipidos" prefWidth="64.0" text="Lipidos" />
+                                     </columns>
+                                     <opaqueInsets>
+                                         <Insets />
+                                     </opaqueInsets>
+                                 </TableView>
+                             </content>
+                         </Tab>
+                         <Tab text="Comida">
+                             <content>
+                                 <TableView fx:id="tabla_comida" minWidth="240.0" VBox.vgrow="ALWAYS">
+                                     <columns>
+                                         <TableColumn fx:id="comida_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento" />
+                                         <TableColumn fx:id="comida_gramos" prefWidth="111.0" text="Gramos" />
+                                         <TableColumn fx:id="comida_tipo" prefWidth="111.0" text="Tipo" />
+                                         <TableColumn fx:id="comida_cantidad" prefWidth="64.0" text="Cantidad" />
+                                         <TableColumn fx:id="comida_unidad" prefWidth="64.0" text="Unidad" />
+                                         <TableColumn fx:id="comida_peso_neto" prefWidth="64.0" text="Peso Neto" />
+                                         <TableColumn fx:id="comida_calorias" prefWidth="76.0" text="Calorias" />
+                                         <TableColumn fx:id="comida_carbohidratos" prefWidth="89.0" text="Carbohidratos" />
+                                         <TableColumn fx:id="comida_proteinas" prefWidth="75.0" text="Proteinas" />
+                                         <TableColumn fx:id="comida_lipidos" prefWidth="64.0" text="Lipidos" />
+                                     </columns>
+                                     <opaqueInsets>
+                                         <Insets />
+                                     </opaqueInsets>
+                                 </TableView>
+                             </content>
+                         </Tab>
+                         <Tab text="Cena">
+                             <TableView fx:id="tabla_cena" minWidth="240.0" VBox.vgrow="ALWAYS">
+                                 <columns>
+                                     <TableColumn fx:id="cena_nombre" prefWidth="122.0" style="font-size: 302px;"
+                                                  text="Alimento"/>
+                                     <TableColumn fx:id="cena_gramos" prefWidth="111.0" text="Gramos"/>
+                                     <TableColumn fx:id="cena_tipo" prefWidth="111.0" text="Tipo"/>
+                                     <TableColumn fx:id="cena_cantidad" prefWidth="64.0" text="Cantidad"/>
+                                     <TableColumn fx:id="cena_unidad" prefWidth="64.0" text="Unidad"/>
+                                     <TableColumn fx:id="cena_peso_neto" prefWidth="64.0" text="Peso Neto"/>
+                                     <TableColumn fx:id="cena_calorias" prefWidth="76.0" text="Calorias"/>
+                                     <TableColumn fx:id="cena_carbohidratos" prefWidth="89.0" text="Carbohidratos"/>
+                                     <TableColumn fx:id="cena_proteinas" prefWidth="75.0" text="Proteinas"/>
+                                     <TableColumn fx:id="cena_lipidos" prefWidth="64.0" text="Lipidos"/>
+                                 </columns>
+                                 <opaqueInsets>
+                                     <Insets/>
+                                 </opaqueInsets>
+                             </TableView>
+                         </Tab>
+                     </tabs>
+                     <VBox.margin>
+                         <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                 </TabPane>
 
-                 </columns>
-                  <opaqueInsets>
-                     <Insets />
-                  </opaqueInsets>
-                  <VBox.margin>
-                     <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
-                  </VBox.margin>
-               </TableView>
                <GridPane.margin>
                   <Insets bottom="10.0" left="10.0" right="5.0" top="10.0" />
                </GridPane.margin>
@@ -271,5 +327,6 @@
 
          </children>
       </GridPane>
+
    </children>
 </AnchorPane>
