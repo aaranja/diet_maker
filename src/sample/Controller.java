@@ -112,12 +112,6 @@ public class Controller implements Initializable {
     public boolean crearDieta(ActionEvent e) throws Exception {
         /* Verificar si se han seleccionado alimentos */
         if(!alimentoObservableList.isEmpty()){
-            /* Conseguir todos los alimentos seleccionados */
-            for(AlimentoItem alimento_selected : alimentoObservableList){
-                System.out.println(alimento_selected.getAlimento().getNombre());
-
-            }
-
             /* Crear datos del usuario */
             DataUser usuario = new DataUser();
             usuario.setNombre(estaVacio(nombreInput) ? nombreInput.getText() : null);
