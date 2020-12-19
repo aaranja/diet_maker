@@ -10,7 +10,7 @@ public class DataUser {
     public DataUser() {
     }
 
-    public DataUser(String nombre, float talla, float altura, int edad, float peso, String genero) {
+    public DataUser(String nombre, float altura, int edad, float peso, String genero) {
         this.nombre = nombre;
         this.altura = altura;
         this.edad = edad;

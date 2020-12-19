@@ -12,7 +12,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 import javafx.util.Callback;
+import sample.analizador.nutricion.Nutricion;
 import sample.buscador.Alimento;
 import sample.seleccionado.AlimentoItem;
 import sample.user.CrearDieta;
@@ -21,16 +23,13 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.json.JsonValue;
-
 import java.awt.*;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
+import java.util.*;
 import java.util.List;
-import java.util.Optional;
-import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
@@ -64,15 +63,54 @@ public class Controller implements Initializable {
     JsonReader rdr;
     private JsonObject obj;
 
-    @FXML private Button add_alimento;
+    /* Listas de los alimentos de las tres comidas del día */
     private ObservableList<AlimentoItem> alimentoObservableList;
     private ObservableList<AlimentoItem> comidaObservableList;
     private ObservableList<AlimentoItem> cenaObservableList;
+
+    /* Parámetros para abrir archivos */
+    File seleccionado;
+    String folder_path = "c:\\";
 
     public Controller(){
         alimentoObservableList = FXCollections.observableArrayList();
         comidaObservableList = FXCollections.observableArrayList();
         cenaObservableList = FXCollections.observableArrayList();
+    }
+
+    /* Método para abrir un archivo de dieta */
+    public void abrir (ActionEvent evento) throws IOException {
+        try{
+            FileChooser fc = new FileChooser();
+            fc.setInitialDirectory(new File("c:\\"));
+            FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Archivos (*.txt)","*.txt");
+            FileChooser.ExtensionFilter filter2 = new FileChooser.ExtensionFilter("Archivos (*.csv)","*.csv");
+            fc.getExtensionFilters().add(filter);
+            fc.getExtensionFilters().add(filter2);
+            seleccionado = fc.showOpenDialog(null);
+            if (seleccionado != null) {
+                String pathFile = seleccionado.getAbsolutePath();
+                // open file and get text data
+                Nutricion getDieta = new Nutricion();
+                Map<String, Object> pre_data = getDieta.analizar(pathFile);
+                setUserData((DataUser) (pre_data.get("Usuario")));
+                tabla_seleccionado.getItems().setAll((Collection<? extends AlimentoItem>) pre_data.get("Desayuno"));
+                tabla_comida.getItems().setAll((Collection<? extends AlimentoItem>) pre_data.get("Comida"));
+                tabla_cena.getItems().setAll((Collection<? extends AlimentoItem>) pre_data.get("Cena"));
+
+            }
+        }catch(Exception error){
+            System.out.println(error.toString());
+        }
+
+    }
+
+    private void setUserData(DataUser usuario){
+        nombreInput.setText(usuario.getNombre());
+        edadInput.setText(String.valueOf(usuario.getEdad()));
+        alturaInput.setText(String.valueOf(usuario.getAltura()));
+        generoSelected.setValue(usuario.getGenero());
+        pesoInput.setText(String.valueOf(usuario.getPeso()));
     }
 
     /* Método para añadir un nuevo alimento a la lista de alimentos seleccionados*/
@@ -303,7 +341,7 @@ public class Controller implements Initializable {
                     tipo_plato = tipo_plato.toLowerCase();
                     tipo_plato = tipo_plato.substring(0,1).toUpperCase() + tipo_plato.substring(1,tipo_plato.length());
 
-                    Alimento buscador = new Alimento(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos,peso_neto, unidad, cantidad );
+                    Alimento buscador = new Alimento(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos,peso_neto);
                     lista_buscador.add(buscador);
                 }
             }
@@ -331,9 +369,7 @@ public class Controller implements Initializable {
                                             b.getCarbohidratos(),
                                             b.getProteinas(),
                                             b.getLipidos(),
-                                            b.getPesoNeto(),
-                                            b.getUnidad(),
-                                            b.getCantidad()
+                                            b.getPesoNeto()
                                     );
                                     Float new_gramos = updateGramos(alimento, (float) 0);
 
@@ -419,7 +455,7 @@ public class Controller implements Initializable {
                     tipo_plato = tipo_plato.toLowerCase();
                     tipo_plato = tipo_plato.substring(0,1).toUpperCase() + tipo_plato.substring(1,tipo_plato.length());
 
-                    Alimento buscador = new Alimento(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos, peso_neto, unidad, cantidad);
+                    Alimento buscador = new Alimento(alimento2,tipo_plato, calorias, carbohidratos, proteinas, lipidos, peso_neto);
                     lista_buscador.add(buscador);
                     tabla_buscador.setItems(lista_buscador);
                 }

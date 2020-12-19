@@ -1,0 +1,16 @@
+T__0=1
+T__1=2
+T__2=3
+T__3=4
+T__4=5
+INT=6
+FLOAT=7
+GRAMOS=8
+TEXTO=9
+IGNORAR=10
+','=1
+'DESAYUNO'=2
+'COMIDA'=3
+'CENA'=4
+' '=5
+'gr'=8

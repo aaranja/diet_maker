@@ -1,11 +1,14 @@
 package sample.user;
 
 import com.pdfjet.*;
+import com.pdfjet.Font;
 import javafx.collections.ObservableList;
 import sample.buscador.Alimento;
 import sample.seleccionado.AlimentoItem;
 
+import java.awt.*;
 import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -48,6 +51,7 @@ public class CrearDieta {
         return  usuario.getPeso() / ( Math.pow((usuario.getAltura()/100), 2));
     }
 
+    /* Devuelve una lista con los totales de calorías y macro nutrientes */
     private List<Float> getData(ObservableList<AlimentoItem> lista){
         float calorias_totales = 0;
         float proteinas_totales = 0;
@@ -55,19 +59,11 @@ public class CrearDieta {
         float carbohidratos_totales = 0;
         List<Float> datos = new ArrayList<>();
         for(AlimentoItem alimentoItem : lista){
-            Alimento alimento = alimentoItem.getAlimento();
-
-
-            /* Conseguir los macronutrientes deacuerdo de los gramos conseguidos */
-            float calorias_subTotal = (alimento.getCalorias()/alimento.getPesoNeto()) * alimentoItem.getGramos();
-            float proteinas_subTotal = (alimento.getProteinas()/alimento.getPesoNeto()) * alimentoItem.getGramos();
-            float lipidos_subTotal = (alimento.getLipidos()/alimento.getPesoNeto()) * alimentoItem.getGramos();
-            float carbohidratos_subTotal = (alimento.getCarbohidratos()/alimento.getPesoNeto()) * alimentoItem.getGramos();
-
-            calorias_totales += calorias_subTotal;
-            proteinas_totales += proteinas_subTotal;
-            lipidos_totales += lipidos_subTotal;
-            carbohidratos_totales += carbohidratos_subTotal;
+            Alimento alimento = getAlimento(alimentoItem);
+            calorias_totales += alimento.getCalorias();
+            proteinas_totales += alimento.getProteinas();
+            lipidos_totales += alimento.getLipidos();
+            carbohidratos_totales += alimento.getCarbohidratos();
         }
 
         datos.add(calorias_totales);
@@ -85,9 +81,7 @@ public class CrearDieta {
         float lipidos = (alimento.getLipidos()/alimento.getPesoNeto()) * alimento.getGramos();
         float carbohidratos = (alimento.getCarbohidratos()/alimento.getPesoNeto()) * alimento.getGramos();
 
-        Alimento alimento_gramo = new Alimento(alimento.getNombre(),alimento.getGramos(), calorias, proteinas, lipidos, carbohidratos);
-
-        return alimento_gramo;
+        return new Alimento(alimento.getNombre(),alimento.getGramos(), calorias, proteinas, lipidos, carbohidratos);
     }
 
     public void calcularDieta(Boolean pdf) throws Exception {
@@ -370,10 +364,10 @@ public class CrearDieta {
         List<Cell> total_cena = new ArrayList<Cell>();
         total_cena.add(getTitle("", f3, 230, true));
         total_cena.add(getTitle("Totales", f3, 45, false));
-        total_cena.add(getTitle(this.cena.get(0).toString(), f3, 45, false));
-        total_cena.add(getTitle(this.cena.get(1).toString(), f3, 45, false));
-        total_cena.add(getTitle(this.cena.get(2).toString(), f3, 45, false));
-        total_cena.add(getTitle(this.cena.get(3).toString(), f3, 50, false));
+        total_cena.add(getTitle(df.format(this.cena.get(0)), f3, 45, false)); // calorias
+        total_cena.add(getTitle(df.format(this.cena.get(1)), f3, 45, false)); // proteinas
+        total_cena.add(getTitle(df.format(this.cena.get(2)), f3, 45, false)); // lipidos
+        total_cena.add(getTitle(df.format(this.cena.get(3)), f3, 50, false)); // carbohidratos
         tableData.add(total_cena);
         /* ############### FIN TABLA CENA #############################*/
 

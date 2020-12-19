@@ -8,10 +8,8 @@ public class Alimento {
     private Float proteinas;
     private Float lipidos;
     private Float peso_neto;
-    private String unidad;
-    private Float cantidad;
 
-    public Alimento(String nombre, String tipo_alimento, Float calorias, Float carbohidratos, Float proteinas, Float lipidos, Float peso_neto,String unidad,Float cantidad) {
+    public Alimento(String nombre, String tipo_alimento, Float calorias, Float carbohidratos, Float proteinas, Float lipidos, Float peso_neto) {
         this.nombre = nombre;
         this.tipo_alimento = tipo_alimento;
         this.calorias = calorias;

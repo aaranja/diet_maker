@@ -13,8 +13,10 @@
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <MenuBar layoutY="2.0" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="1280.0"
              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" text="Close"/>
+        <Menu mnemonicParsing="false" text="Archivo">
+            <MenuItem mnemonicParsing="false" onAction="#abrir" text="Abrir" />
+            <MenuItem mnemonicParsing="false" onAction="#guardarDieta" text="Guardar dieta" />
+            <MenuItem mnemonicParsing="false" text="Cerrar"/>
         </Menu>
         <Menu mnemonicParsing="false" text="Edit">
             <MenuItem mnemonicParsing="false" text="Delete"/>
@@ -69,16 +71,6 @@
                     <TableColumn fx:id="c_tipo" prefWidth="111.0" text="Tipo">
                         <cellValueFactory>
                             <PropertyValueFactory property="tipo"/>
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn fx:id="c_cantidad" prefWidth="64.0" text="Cantidad">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="cantidad"/>
-                        </cellValueFactory>
-                    </TableColumn>
-                    <TableColumn fx:id="c_unidad" prefWidth="64.0" text="Unidad">
-                        <cellValueFactory>
-                            <PropertyValueFactory property="unidad"/>
                         </cellValueFactory>
                     </TableColumn>
                     <TableColumn fx:id="c_peso_neto" prefWidth="64.0" text="Peso Neto">
@@ -323,16 +315,6 @@
                                             <PropertyValueFactory property="tipo"/>
                                         </cellValueFactory>
                                     </TableColumn>
-                                    <TableColumn fx:id="a_cantidad" prefWidth="64.0" text="Cantidad">
-                                        <cellValueFactory>
-                                            <PropertyValueFactory property="cantidad"/>
-                                        </cellValueFactory>
-                                    </TableColumn>
-                                    <TableColumn fx:id="a_unidad" prefWidth="64.0" text="Unidad">
-                                        <cellValueFactory>
-                                            <PropertyValueFactory property="unidad"/>
-                                        </cellValueFactory>
-                                    </TableColumn>
                                     <TableColumn fx:id="a_peso_neto" prefWidth="64.0" text="Peso Neto">
                                         <cellValueFactory>
                                             <PropertyValueFactory property="pesoNeto"/>
@@ -384,16 +366,6 @@
                                         <PropertyValueFactory property="tipo"/>
                                     </cellValueFactory>
                                 </TableColumn>
-                                <TableColumn fx:id="comida_cantidad" prefWidth="64.0" text="Cantidad">
-                                    <cellValueFactory>
-                                        <PropertyValueFactory property="cantidad"/>
-                                    </cellValueFactory>
-                                </TableColumn>
-                                <TableColumn fx:id="comida_unidad" prefWidth="64.0" text="Unidad">
-                                    <cellValueFactory>
-                                        <PropertyValueFactory property="unidad"/>
-                                    </cellValueFactory>
-                                </TableColumn>
                                 <TableColumn fx:id="comida_peso_neto" prefWidth="64.0" text="Peso Neto">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="pesoNeto"/>
@@ -442,16 +414,6 @@
                                 <TableColumn fx:id="cena_tipo" prefWidth="111.0" text="Tipo">
                                     <cellValueFactory>
                                         <PropertyValueFactory property="tipo"/>
-                                    </cellValueFactory>
-                                </TableColumn>
-                                <TableColumn fx:id="cena_cantidad" prefWidth="64.0" text="Cantidad">
-                                    <cellValueFactory>
-                                        <PropertyValueFactory property="cantidad"/>
-                                    </cellValueFactory>
-                                </TableColumn>
-                                <TableColumn fx:id="cena_unidad" prefWidth="64.0" text="Unidad">
-                                    <cellValueFactory>
-                                        <PropertyValueFactory property="unidad"/>
                                     </cellValueFactory>
                                 </TableColumn>
                                 <TableColumn fx:id="cena_peso_neto" prefWidth="64.0" text="Peso Neto">

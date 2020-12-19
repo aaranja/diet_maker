@@ -19,10 +19,6 @@ public class AlimentoItem {
 
     public Float getPesoNeto(){ return  alimento.getPesoNeto(); }
 
-    public Float getCantidad(){return  alimento.getCantidad();}
-
-    public String getUnidad(){return  alimento.getUnidad();}
-
     public Alimento getAlimento(){ return alimento; }
 
     public String getNombre(){ return alimento.getNombre(); }
