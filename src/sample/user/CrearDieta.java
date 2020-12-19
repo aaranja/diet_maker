@@ -152,7 +152,7 @@ public class CrearDieta {
     private void crearPDF() throws Exception{
         PDF pdf = new PDF(
                 new BufferedOutputStream(
-                        new FileOutputStream("Ejemplo2.pdf")));
+                        new FileOutputStream("Reporte.pdf")));
         //Empieza texto
 
         Font f1 = new Font(pdf, CoreFont.HELVETICA);
@@ -257,11 +257,11 @@ public class CrearDieta {
 
             fila.add(getCellCampo(a.getNombre(), f2, 130 ));
             fila.add(getCellCampo(alimento.getTipo(), f2, 100));
-            fila.add(getCellCampo(String.valueOf(a.getPesoNeto()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getCalorias()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getProteinas()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getLipidos()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getCarbohidratos()), f2, 50));
+            fila.add(getCellCampo(df.format(a.getPesoNeto()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getCalorias()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getProteinas()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getLipidos()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getCarbohidratos()), f2, 50));
 
             tableData.add(fila);
 
@@ -271,10 +271,10 @@ public class CrearDieta {
         List<Cell> total = new ArrayList<Cell>();
         total.add(getTitle("", f3, 230, true));
         total.add(getTitle("Totales", f3, 45, false));
-        total.add(getTitle(this.desayuno.get(0).toString(), f3, 45, false));
-        total.add(getTitle(this.desayuno.get(1).toString(), f3, 45, false));
-        total.add(getTitle(this.desayuno.get(2).toString(), f3, 45, false));
-        total.add(getTitle(this.desayuno.get(3).toString(), f3, 50, false));
+        total.add(getTitle(df.format(this.desayuno.get(0)), f3, 45, false));
+        total.add(getTitle(df.format(this.desayuno.get(1)), f3, 45, false));
+        total.add(getTitle(df.format(this.desayuno.get(2)), f3, 45, false));
+        total.add(getTitle(df.format(this.desayuno.get(3)), f3, 50, false));
         tableData.add(total);
 
 
@@ -303,11 +303,11 @@ public class CrearDieta {
 
             fila.add(getCellCampo(a.getNombre(), f2, 130 ));
             fila.add(getCellCampo(alimento.getTipo(), f2, 100));
-            fila.add(getCellCampo(String.valueOf(a.getPesoNeto()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getCalorias()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getProteinas()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getLipidos()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getCarbohidratos()), f2, 50));
+            fila.add(getCellCampo(df.format(a.getPesoNeto()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getCalorias()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getProteinas()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getLipidos()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getCarbohidratos()), f2, 50));
 
             tableData.add(fila);
 
@@ -317,10 +317,10 @@ public class CrearDieta {
         List<Cell> total_comida = new ArrayList<Cell>();
         total_comida.add(getTitle("", f3, 230, true));
         total_comida.add(getTitle("Totales", f3, 45, false));
-        total_comida.add(getTitle(this.comida.get(0).toString(), f3, 45, false));
-        total_comida.add(getTitle(this.comida.get(1).toString(), f3, 45, false));
-        total_comida.add(getTitle(this.comida.get(2).toString(), f3, 45, false));
-        total_comida.add(getTitle(this.comida.get(3).toString(), f3, 50, false));
+        total_comida.add(getTitle(df.format(this.comida.get(0)), f3, 45, false));
+        total_comida.add(getTitle(df.format(this.comida.get(1)), f3, 45, false));
+        total_comida.add(getTitle(df.format(this.comida.get(2)), f3, 45, false));
+        total_comida.add(getTitle(df.format(this.comida.get(3)), f3, 50, false));
         tableData.add(total_comida);
 
         /* ############### FIN TABLA COMIDA #############################*/
@@ -350,11 +350,11 @@ public class CrearDieta {
 
             fila.add(getCellCampo(a.getNombre(), f2, 130 ));
             fila.add(getCellCampo(alimento.getTipo(), f2, 100));
-            fila.add(getCellCampo(String.valueOf(a.getPesoNeto()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getCalorias()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getProteinas()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getLipidos()), f2, 45));
-            fila.add(getCellCampo(String.valueOf(a.getCarbohidratos()), f2, 50));
+            fila.add(getCellCampo(df.format(a.getPesoNeto()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getCalorias()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getProteinas()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getLipidos()), f2, 45));
+            fila.add(getCellCampo(df.format(a.getCarbohidratos()), f2, 50));
 
             tableData.add(fila);
 
@@ -381,7 +381,7 @@ public class CrearDieta {
 
         TextLine text8 = new TextLine(f1,
                 "Tu masa basal es: "+getMasaBasal());
-        text8.setLocation(30f, 700f);
+        text8.setLocation(50f, 700f);
         text8.setStrikeout(false);
         text8.setUnderline(false);
         text8.setFontSize(10);
@@ -389,7 +389,7 @@ public class CrearDieta {
 
         TextLine text9 = new TextLine(f1,
                 "Tu indice de masa corporal es: "+df.format(getIMC()));
-        text9.setLocation(30f, 715f);
+        text9.setLocation(50f, 715f);
         text9.setStrikeout(false);
         text9.setUnderline(false);
         text9.setFontSize(10);
@@ -397,7 +397,7 @@ public class CrearDieta {
 
         TextLine text10 = new TextLine(f1,
                 "Tus calorias totales son: "+this.calorias_totales);
-        text10.setLocation(30f, 730f);
+        text10.setLocation(50f, 730f);
         text10.setStrikeout(false);
         text10.setUnderline(false);
         text10.setFontSize(10);
@@ -405,13 +405,16 @@ public class CrearDieta {
 
         TextLine text11 = new TextLine(f1,
                 "Los macronutrientes (proteinas, lipidos, carbohidratos) totales son: "+df.format(this.proteinas_totales)+", "+df.format(this.lipidos_totales)+", "+df.format(this.carbohidratos_totales));
-        text11.setLocation(30f, 745f);
+        text11.setLocation(50f, 745f);
         text11.setStrikeout(false);
         text11.setUnderline(false);
         text11.setFontSize(10);
         float[] point11 = text11.drawOn(page);
 
         pdf.complete();
+
+        File path = new File("Reporte.pdf");
+        Desktop.getDesktop().open(path);
 
     }
 

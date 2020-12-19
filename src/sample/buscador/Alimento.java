@@ -17,8 +17,6 @@ public class Alimento {
         this.proteinas = proteinas;
         this.lipidos = lipidos;
         this.peso_neto = peso_neto;
-        this.unidad = unidad;
-        this.cantidad = cantidad;
     }
 
     public Alimento(String nombre, Float gramos, Float calorias, Float proteinas, Float lipidos, Float carbohidratos){
@@ -75,7 +73,5 @@ public class Alimento {
     }
 
     public Float getPesoNeto() { return peso_neto; }
-    public Float getCantidad() { return cantidad; }
-    public String getUnidad() { return unidad;}
 
 }
