@@ -462,6 +462,49 @@ public class Controller implements Initializable {
             }
         }
     }
+
+    public void guardarDieta(ActionEvent event) throws IOException {
+        String salida = "";
+        /* Conseguir datos de usuario */
+        String nombre = estaVacio(nombreInput) ? nombreInput.getText() : null;
+        int edad = estaVacio(edadInput) ? Integer.parseInt(edadInput.getText()) : 0;
+        float altura = estaVacio(alturaInput) ? Float.parseFloat(alturaInput.getText()) : 0;
+        float peso = estaVacio(pesoInput) ? Float.parseFloat(pesoInput.getText()) : 0;
+        String genero = generoSelected.getValue()!=null ? generoSelected.getValue() : null;
+
+        salida += nombre+","+edad+","+peso+","+altura+","+genero+"\n";
+
+        /*Conseguir listas */
+        salida+= writeAlimentoList(tabla_seleccionado.getItems(), "DESAYUNO");
+        salida+= writeAlimentoList(tabla_comida.getItems(), "COMIDA");
+        salida+= writeAlimentoList(tabla_cena.getItems(), "CENA");
+
+        FileChooser fc = new FileChooser();
+        fc.setInitialDirectory(new File(folder_path));
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Archivos (*.txt)","*.txt");
+        FileChooser.ExtensionFilter filter2 = new FileChooser.ExtensionFilter("Archivos (*.csv)","*.csv");
+        fc.getExtensionFilters().add(filter);
+        fc.getExtensionFilters().add(filter2);
+        File seleccionad = fc.showSaveDialog(null);
+        if (seleccionad!=null) {
+            FileWriter escritura  = new FileWriter(seleccionad);
+            for(int i=0;i<salida.length();i++)
+            {
+                escritura.write(salida.charAt(i));
+            }
+            escritura.close();
+        }
+    }
+
+    private String writeAlimentoList(ObservableList<AlimentoItem> lista_alimento, String tipo_plato){
+        String lista_string = tipo_plato+"\n";
+        for(AlimentoItem alimento : lista_alimento){
+                lista_string+= alimento.getGramos()+","+alimento.getNombre()+","+alimento.getTipo()+
+                        ","+alimento.getPesoNeto()+","+alimento.getCalorias()+","+alimento.getProteinas()+
+                        ","+alimento.getLipidos()+ ","+alimento.getCarbohidratos()+"\n";
+        }
+        return lista_string;
+    }
 }
 
 
