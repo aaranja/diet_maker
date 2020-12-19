@@ -63,6 +63,7 @@
             <TableView fx:id="tabla_buscador" layoutX="22.0" layoutY="106.0" prefHeight="514.0" prefWidth="600.0"
                        VBox.vgrow="ALWAYS">
                 <columns>
+                    <TableColumn fx:id="c_accion" prefWidth="40.0" text="Agregar"/>
                     <TableColumn fx:id="c_nombre" prefWidth="122.0" style="font-size: 302px;" text="Alimento">
                         <cellValueFactory>
                             <PropertyValueFactory property="nombre"/>
@@ -98,7 +99,7 @@
                             <PropertyValueFactory property="lipidos"/>
                         </cellValueFactory>
                     </TableColumn>
-                    <TableColumn fx:id="c_accion" prefWidth="66.0" text="Agregar"/>
+
 
                 </columns>
                 <VBox.margin>
@@ -134,18 +135,7 @@
                             <Insets bottom="10.0" left="10.0" right="10.0"/>
                         </GridPane.margin>
                     </Button>
-                    <CheckBox contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT"
-                              prefHeight="20.0" prefWidth="117.0" text="Generar PDF" GridPane.columnIndex="1">
-                        <font>
-                            <Font name="System Bold Italic" size="14.0"/>
-                        </font>
-                        <cursor>
-                            <Cursor fx:constant="CLOSED_HAND"/>
-                        </cursor>
-                        <GridPane.margin>
-                            <Insets bottom="10.0" left="10.0"/>
-                        </GridPane.margin>
-                    </CheckBox>
+
                     <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="142.0"
                             style="-fx-background-color: #f57170; -fx-background-radius: 10;" text="Limpiar datos"
                             textFill="WHITE">
